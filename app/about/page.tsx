@@ -28,22 +28,26 @@ export default function AboutPage() {
     {
       icon: Crown,
       title: 'Luxury Redefined',
-      description: 'Experience unparalleled luxury with world-class amenities designed for the discerning wellness enthusiast.',
+      description:
+        'Experience unparalleled luxury with world-class amenities designed for the discerning wellness enthusiast.',
     },
     {
       icon: Award,
       title: 'Excellence Standard',
-      description: 'Setting new benchmarks in Azerbaijan\'s wellness industry with premium services and international standards.',
+      description:
+        "Setting new benchmarks in Azerbaijan's wellness industry with premium services and international standards.",
     },
     {
       icon: Users,
       title: 'Cultural Sensitivity',
-      description: 'Respecting local values while delivering global wellness experiences through thoughtful design and services.',
+      description:
+        'Respecting local values while delivering global wellness experiences through thoughtful design and services.',
     },
     {
       icon: MapPin,
       title: 'Prime Location',
-      description: 'Strategically located in Baku\'s premium district, offering easy access and exclusive parking facilities.',
+      description:
+        "Strategically located in Baku's premium district, offering easy access and exclusive parking facilities.",
     },
   ];
 
@@ -51,13 +55,15 @@ export default function AboutPage() {
     {
       icon: Heart,
       title: 'Wellness First',
-      description: 'Your health and wellness journey is our primary focus, with every service designed around your needs.',
+      description:
+        'Your health and wellness journey is our primary focus, with every service designed around your needs.',
       color: 'from-red-500 to-pink-500',
     },
     {
       icon: Shield,
       title: 'Trust & Safety',
-      description: 'Maintaining the highest standards of safety, hygiene, and professional integrity in all our services.',
+      description:
+        'Maintaining the highest standards of safety, hygiene, and professional integrity in all our services.',
       color: 'from-blue-500 to-indigo-500',
     },
     {
@@ -92,7 +98,8 @@ export default function AboutPage() {
               ABOUT <span className='text-[#AE3537]'>CROWN</span>
             </h1>
             <p className='text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>
-              Azerbaijan's premier luxury wellness destination, redefining fitness and spa experiences with uncompromising excellence and cultural sensitivity.
+              Azerbaijan&apos;s premier luxury wellness destination, redefining fitness and spa experiences with
+              uncompromising excellence and cultural sensitivity.
             </p>
           </div>
         </div>
@@ -129,10 +136,14 @@ export default function AboutPage() {
                 Redefining <span className='text-[#AE3537]'>Wellness</span>
               </h2>
               <p className='text-gray-300 text-lg mb-6 leading-relaxed'>
-                Crown Wellness Club stands as Azerbaijan's first interactive luxury fitness destination, pioneering a new era of premium wellness experiences. Our state-of-the-art facility combines international standards with deep respect for local culture and values.
+                Crown Wellness Club stands as Azerbaijan&apos;s first interactive luxury fitness destination, pioneering
+                a new era of premium wellness experiences. Our state-of-the-art facility combines international
+                standards with deep respect for local culture and values.
               </p>
               <p className='text-gray-300 text-lg mb-8 leading-relaxed'>
-                Every aspect of our club is meticulously designed to provide an unparalleled wellness journey, from our cutting-edge equipment to our world-class spa services, all delivered with the highest levels of professionalism and cultural sensitivity.
+                Every aspect of our club is meticulously designed to provide an unparalleled wellness journey, from our
+                cutting-edge equipment to our world-class spa services, all delivered with the highest levels of
+                professionalism and cultural sensitivity.
               </p>
 
               {/* Cultural Sensitivity Highlight */}
@@ -142,7 +153,8 @@ export default function AboutPage() {
                   Cultural Excellence
                 </h4>
                 <p className='text-gray-300'>
-                  We honor Azerbaijan's rich cultural heritage while delivering world-class wellness experiences, ensuring every member feels respected and valued in our premium environment.
+                  We honor Azerbaijan&apos;s rich cultural heritage while delivering world-class wellness experiences,
+                  ensuring every member feels respected and valued in our premium environment.
                 </p>
               </div>
             </div>
@@ -219,7 +231,9 @@ export default function AboutPage() {
               >
                 <div className='relative bg-gray-800/50 border border-gray-700 rounded-3xl p-8 hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 group-hover:transform group-hover:scale-105 shadow-lg backdrop-blur-sm h-full overflow-hidden'>
                   {/* Background Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}
+                  ></div>
 
                   <div className='relative z-10'>
                     <div className='flex justify-center mb-6'>
@@ -232,7 +246,9 @@ export default function AboutPage() {
                   </div>
 
                   {/* Border Glow */}
-                  <div className={`absolute -inset-0.5 opacity-0 group-hover:opacity-40 transition-opacity duration-700 bg-gradient-to-br ${value.color} rounded-3xl blur-2xl -z-10`}></div>
+                  <div
+                    className={`absolute -inset-0.5 opacity-0 group-hover:opacity-40 transition-opacity duration-700 bg-gradient-to-br ${value.color} rounded-3xl blur-2xl -z-10`}
+                  ></div>
                 </div>
               </div>
             ))}

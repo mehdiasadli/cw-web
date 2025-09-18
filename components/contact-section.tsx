@@ -19,62 +19,46 @@ const contactInfo: ContactInfo[] = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: [
-      'Baku, Azerbaijan',
-      'Premium Location',
-      'Easy Parking'
-    ]
+    details: ['Baku, Azerbaijan', 'Premium Location', 'Easy Parking'],
   },
   {
     icon: Phone,
     title: 'Call Us',
-    details: [
-      '+994 XX XXX XX XX',
-      'Available 6AM - 11PM',
-      '7 Days a Week'
-    ]
+    details: ['+994 XX XXX XX XX', 'Available 6AM - 11PM', '7 Days a Week'],
   },
   {
     icon: Mail,
     title: 'Email Us',
-    details: [
-      'info@crownwellness.az',
-      'Quick Response',
-      'Professional Support'
-    ]
+    details: ['info@crownwellness.az', 'Quick Response', 'Professional Support'],
   },
   {
     icon: Clock,
     title: 'Operating Hours',
-    details: [
-      'Mon-Sun: 6:00 - 23:00',
-      'Public Holidays: 8:00 - 20:00',
-      'Always Here for You'
-    ]
-  }
+    details: ['Mon-Sun: 6:00 - 23:00', 'Public Holidays: 8:00 - 20:00', 'Always Here for You'],
+  },
 ];
 
 const socialLinks: SocialLink[] = [
   {
     icon: Instagram,
     href: '#',
-    label: 'Instagram'
+    label: 'Instagram',
   },
   {
     icon: Facebook,
     href: '#',
-    label: 'Facebook'
+    label: 'Facebook',
   },
   {
     icon: Twitter,
     href: '#',
-    label: 'Twitter'
+    label: 'Twitter',
   },
   {
     icon: Linkedin,
     href: '#',
-    label: 'LinkedIn'
-  }
+    label: 'LinkedIn',
+  },
 ];
 
 interface FormData {
@@ -92,7 +76,7 @@ export default function ContactSection() {
     email: '',
     phone: '',
     message: '',
-    interestedIn: ''
+    interestedIn: '',
   });
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -115,9 +99,9 @@ export default function ContactSection() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -133,7 +117,7 @@ export default function ContactSection() {
       email: '',
       phone: '',
       message: '',
-      interestedIn: ''
+      interestedIn: '',
     });
   };
 
@@ -156,7 +140,8 @@ export default function ContactSection() {
             GET IN <span className='text-[#AE3537]'>TOUCH</span>
           </h2>
           <p className='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>
-            Ready to begin your luxury wellness journey? Contact us today and discover what makes Crown Wellness Club Azerbaijan's premier destination.
+            Ready to begin your luxury wellness journey? Contact us today and discover what makes Crown Wellness Club
+            Azerbaijan&apos;s premier destination.
           </p>
         </div>
 
@@ -167,9 +152,7 @@ export default function ContactSection() {
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
           >
-            <h3 className='text-3xl font-bold text-[#AE3537] mb-8'>
-              Contact Information
-            </h3>
+            <h3 className='text-3xl font-bold text-[#AE3537] mb-8'>Contact Information</h3>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6 mb-12'>
               {contactInfo.map((info, index) => (
@@ -226,9 +209,7 @@ export default function ContactSection() {
             }`}
           >
             <div className='bg-gray-800/50 border border-gray-700 rounded-2xl p-8 backdrop-blur-sm shadow-xl'>
-              <h3 className='text-3xl font-bold text-[#AE3537] mb-8'>
-                Send Us a Message
-              </h3>
+              <h3 className='text-3xl font-bold text-[#AE3537] mb-8'>Send Us a Message</h3>
 
               <form onSubmit={handleSubmit} className='space-y-6'>
                 <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
@@ -297,7 +278,7 @@ export default function ContactSection() {
                       <option value='premium'>Premium Plan</option>
                       <option value='royal'>Crown Royal Plan</option>
                       <option value='tour'>Just a Tour</option>
-                      <option value='womens-exclusive'>Women's Exclusive</option>
+                      <option value='womens-exclusive'>Women&apos;s Exclusive</option>
                     </select>
                   </div>
                 </div>
@@ -325,7 +306,8 @@ export default function ContactSection() {
                 </button>
 
                 <p className='text-gray-400 text-xs text-center'>
-                  By submitting this form, you agree to our privacy policy. We respect your privacy and will never share your information with third parties.
+                  By submitting this form, you agree to our privacy policy. We respect your privacy and will never share
+                  your information with third parties.
                 </p>
               </form>
             </div>

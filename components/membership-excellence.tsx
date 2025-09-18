@@ -194,13 +194,7 @@ const customFeatures: CustomFeature[] = [
     category: 'exclusive',
     icon: Crown,
     color: 'from-yellow-500 to-yellow-700',
-    features: [
-      'VIP lounge access',
-      'Priority booking',
-      'Guest passes',
-      'Concierge services',
-      'Exclusive events',
-    ],
+    features: ['VIP lounge access', 'Priority booking', 'Guest passes', 'Concierge services', 'Exclusive events'],
   },
   {
     id: 'womens-sanctuary',
@@ -222,73 +216,71 @@ const customFeatures: CustomFeature[] = [
 ];
 
 // Separate component for feature cards with proper event handling
-const FeatureCard = React.memo(({
-  feature,
-  isSelected,
-  onToggle,
-  isAnnual
-}: {
-  feature: CustomFeature;
-  isSelected: boolean;
-  onToggle: (id: string) => void;
-  isAnnual: boolean;
-}) => {
-  const handleClick = () => {
-    onToggle(feature.id);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
+const FeatureCard = React.memo(
+  ({
+    feature,
+    isSelected,
+    onToggle,
+    isAnnual,
+  }: {
+    feature: CustomFeature;
+    isSelected: boolean;
+    onToggle: (id: string) => void;
+    isAnnual: boolean;
+  }) => {
+    const handleClick = () => {
       onToggle(feature.id);
-    }
-  };
+    };
 
-  return (
-    <div
-      role="checkbox"
-      tabIndex={0}
-      aria-checked={isSelected}
-      aria-labelledby={`feature-${feature.id}-title`}
-      className={`p-4 rounded-lg border cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#AE3537] focus:ring-offset-2 focus:ring-offset-gray-900 ${
-        isSelected
-          ? 'bg-[#AE3537]/20 border-[#AE3537] shadow-lg shadow-[#AE3537]/20'
-          : 'bg-gray-800/50 border-gray-700 hover:border-gray-600 hover:bg-gray-800/70'
-      }`}
-      onClick={handleClick}
-      onKeyDown={handleKeyDown}
-    >
-      <div className='flex items-start gap-3'>
-        <div
-          className={`w-5 h-5 rounded border-2 flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-200 ${
-            isSelected
-              ? 'bg-[#AE3537] border-[#AE3537]'
-              : 'border-gray-500'
-          }`}
-        >
-          {isSelected && (
-            <Check className='w-3 h-3 text-white' />
-          )}
-        </div>
-        <div className='flex-1'>
-          <div className='flex items-center justify-between mb-1'>
-            <h4 id={`feature-${feature.id}-title`} className='font-semibold text-white'>
-              {feature.name}
-            </h4>
-            <div className='font-bold text-[#AE3537]'>
-              ${isAnnual ? Math.floor(feature.yearlyPrice / 12) : feature.monthlyPrice}/mo
-            </div>
+    const handleKeyDown = (e: React.KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onToggle(feature.id);
+      }
+    };
+
+    return (
+      <div
+        role='checkbox'
+        tabIndex={0}
+        aria-checked={isSelected}
+        aria-labelledby={`feature-${feature.id}-title`}
+        className={`p-4 rounded-lg border cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#AE3537] focus:ring-offset-2 focus:ring-offset-gray-900 ${
+          isSelected
+            ? 'bg-[#AE3537]/20 border-[#AE3537] shadow-lg shadow-[#AE3537]/20'
+            : 'bg-gray-800/50 border-gray-700 hover:border-gray-600 hover:bg-gray-800/70'
+        }`}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <div className='flex items-start gap-3'>
+          <div
+            className={`w-5 h-5 rounded border-2 flex items-center justify-center mt-1 flex-shrink-0 transition-all duration-200 ${
+              isSelected ? 'bg-[#AE3537] border-[#AE3537]' : 'border-gray-500'
+            }`}
+          >
+            {isSelected && <Check className='w-3 h-3 text-white' />}
           </div>
-          <p className='text-sm text-gray-400 mb-2'>{feature.description}</p>
-          <div className='text-xs text-gray-500'>
-            {feature.features.slice(0, 2).join(' • ')}
-            {feature.features.length > 2 && ` • +${feature.features.length - 2} more`}
+          <div className='flex-1'>
+            <div className='flex items-center justify-between mb-1'>
+              <h4 id={`feature-${feature.id}-title`} className='font-semibold text-white'>
+                {feature.name}
+              </h4>
+              <div className='font-bold text-[#AE3537]'>
+                ${isAnnual ? Math.floor(feature.yearlyPrice / 12) : feature.monthlyPrice}/mo
+              </div>
+            </div>
+            <p className='text-sm text-gray-400 mb-2'>{feature.description}</p>
+            <div className='text-xs text-gray-500'>
+              {feature.features.slice(0, 2).join(' • ')}
+              {feature.features.length > 2 && ` • +${feature.features.length - 2} more`}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 FeatureCard.displayName = 'FeatureCard';
 
@@ -300,20 +292,18 @@ export default function MembershipExcellence() {
 
   // Calculate custom pricing with useMemo for performance
   const customPrice = React.useMemo(() => {
-    const selectedFeaturesData = customFeatures.filter(feature => selectedFeatures.includes(feature.id));
+    const selectedFeaturesData = customFeatures.filter((feature) => selectedFeatures.includes(feature.id));
     const monthlyTotal = selectedFeaturesData.reduce((sum, feature) => sum + feature.monthlyPrice, 0);
     const yearlyTotal = selectedFeaturesData.reduce((sum, feature) => sum + feature.yearlyPrice, 0);
     return { monthly: monthlyTotal, yearly: yearlyTotal };
-  }, [selectedFeatures, customFeatures]);
+  }, [selectedFeatures]);
 
   // Feature selection handler with useCallback for performance
   const handleFeatureToggle = React.useCallback((featureId: string) => {
     console.log('Toggling feature:', featureId); // Debug log
-    setSelectedFeatures(prev => {
+    setSelectedFeatures((prev) => {
       const isSelected = prev.includes(featureId);
-      const newSelection = isSelected
-        ? prev.filter(id => id !== featureId)
-        : [...prev, featureId];
+      const newSelection = isSelected ? prev.filter((id) => id !== featureId) : [...prev, featureId];
       console.log('Previous selection:', prev); // Debug log
       console.log('New selection:', newSelection); // Debug log
       return newSelection;
@@ -321,9 +311,12 @@ export default function MembershipExcellence() {
   }, []);
 
   // Helper function to check if feature is selected
-  const isFeatureSelected = React.useCallback((featureId: string) => {
-    return selectedFeatures.includes(featureId);
-  }, [selectedFeatures]);
+  const isFeatureSelected = React.useCallback(
+    (featureId: string) => {
+      return selectedFeatures.includes(featureId);
+    },
+    [selectedFeatures]
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -362,7 +355,8 @@ export default function MembershipExcellence() {
             MEMBERSHIP <span className='text-[#AE3537]'>EXCELLENCE</span>
           </h2>
           <p className='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8'>
-            Choose your path to luxury wellness. Each membership is crafted to deliver exceptional value and exclusive experiences in Azerbaijan's premier destination.
+            Choose your path to luxury wellness. Each membership is crafted to deliver exceptional value and exclusive
+            experiences in Azerbaijan&apos;s premier destination.
           </p>
 
           {/* Founding Members Badge */}
@@ -474,15 +468,11 @@ export default function MembershipExcellence() {
                         <span className='text-white/60 text-sm line-through'>
                           ${isAnnual ? Math.floor(plan.originalPrice.yearly / 12) : plan.originalPrice.monthly}
                         </span>
-                        <span className='text-white/80 text-sm'>
-                          /{isAnnual ? 'month' : 'month'}
-                        </span>
+                        <span className='text-white/80 text-sm'>/{isAnnual ? 'month' : 'month'}</span>
                       </div>
                     </div>
                     {isAnnual && (
-                      <div className='text-white/70 text-xs mt-1'>
-                        Billed annually (${plan.price.yearly})
-                      </div>
+                      <div className='text-white/70 text-xs mt-1'>Billed annually (${plan.price.yearly})</div>
                     )}
                   </div>
 
@@ -496,9 +486,7 @@ export default function MembershipExcellence() {
                     <ul className='space-y-4'>
                       {plan.features.map((feature, idx) => (
                         <li key={idx} className='flex items-start text-white text-sm'>
-                          <Check
-                            className={`w-4 h-4 text-[#AE3537] mr-3 mt-0.5 flex-shrink-0`}
-                          />
+                          <Check className={`w-4 h-4 text-[#AE3537] mr-3 mt-0.5 flex-shrink-0`} />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -538,7 +526,8 @@ export default function MembershipExcellence() {
               Or Build Your <span className='text-[#AE3537]'>Custom Plan</span>
             </h3>
             <p className='text-xl text-gray-300 max-w-3xl mx-auto'>
-              Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.
+              Create a personalized membership by selecting only the features you need. Perfect for those who want
+              complete control over their wellness experience.
             </p>
           </div>
 
@@ -550,98 +539,97 @@ export default function MembershipExcellence() {
               }`}
               style={{ transitionDelay: `${3 * 150}ms` }}
             >
-            {/* Card */}
-            <div className='relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl border border-gray-800 rounded-3xl transition-all duration-300 hover:border-gray-700 overflow-hidden'>
+              {/* Card */}
+              <div className='relative bg-gradient-to-br from-gray-900/90 to-black/90 backdrop-blur-xl border border-gray-800 rounded-3xl transition-all duration-300 hover:border-gray-700 overflow-hidden'>
+                {/* Background Glow */}
+                <div className='absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-700' />
 
-              {/* Background Glow */}
-              <div className='absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-700' />
+                {/* Card Header */}
+                <div className='grid lg:grid-cols-2 gap-8 p-8'>
+                  {/* Left Column - Icon, Title, Price */}
+                  <div className='text-center lg:text-left'>
+                    {/* Icon */}
+                    <div className='flex justify-center lg:justify-start mb-6'>
+                      <div className='p-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-full group-hover:scale-110 transition-transform duration-300'>
+                        <Sparkles className='w-8 h-8 text-white' />
+                      </div>
+                    </div>
 
-              {/* Card Header */}
-              <div className='grid lg:grid-cols-2 gap-8 p-8'>
-                {/* Left Column - Icon, Title, Price */}
-                <div className='text-center lg:text-left'>
-                  {/* Icon */}
-                  <div className='flex justify-center lg:justify-start mb-6'>
-                    <div className='p-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-full group-hover:scale-110 transition-transform duration-300'>
-                      <Sparkles className='w-8 h-8 text-white' />
+                    {/* Title & Subtitle */}
+                    <div className='mb-6'>
+                      <h3 className='text-2xl font-bold text-white mb-2'>
+                        <span className='text-[#AE3537]'>Custom</span> Plan
+                      </h3>
+                      <p className='text-[#AE3537] font-semibold'>Build Your Own</p>
+                    </div>
+
+                    {/* Price */}
+                    <div className='mb-6'>
+                      <div className='text-4xl font-bold text-white mb-2'>
+                        $
+                        {customPrice.monthly > 0
+                          ? isAnnual
+                            ? Math.floor(customPrice.yearly / 12)
+                            : customPrice.monthly
+                          : 0}
+                        <span className='text-lg text-gray-400'>/month</span>
+                      </div>
+                      {isAnnual && customPrice.yearly > 0 && (
+                        <div className='text-sm text-gray-400'>Billed annually (${customPrice.yearly})</div>
+                      )}
+                      {customPrice.monthly === 0 && (
+                        <div className='text-sm text-gray-400'>Select features to see pricing</div>
+                      )}
+                    </div>
+
+                    {/* Description */}
+                    <p className='text-gray-400 text-sm leading-relaxed mb-6'>
+                      {selectedFeatures.length > 0
+                        ? `Your personalized membership with ${selectedFeatures.length} selected feature${selectedFeatures.length !== 1 ? 's' : ''}. Perfect for your specific wellness needs.`
+                        : 'Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.'}
+                    </p>
+
+                    {/* CTA Button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        console.log('Custom plan button clicked, selected features:', selectedFeatures);
+                        if (selectedFeatures.length > 0) {
+                          // Add your custom plan logic here
+                          alert(`Custom plan created with ${selectedFeatures.length} features!`);
+                        }
+                      }}
+                      className={`w-full py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 ${
+                        selectedFeatures.length > 0
+                          ? 'bg-[#AE3537] text-white hover:bg-[#8B2A2D] hover:shadow-xl hover:shadow-[#AE3537]/30 focus:ring-[#AE3537]'
+                          : 'bg-gray-700 text-gray-400 cursor-not-allowed focus:ring-gray-500'
+                      }`}
+                      disabled={selectedFeatures.length === 0}
+                    >
+                      {selectedFeatures.length > 0 ? 'Build Custom Plan' : 'Select Features First'}
+                    </button>
+                  </div>
+
+                  {/* Right Column - Feature Selection */}
+                  <div>
+                    <h4 className='text-lg font-semibold text-white mb-4'>Select Features:</h4>
+                    <div className='space-y-3 max-h-80 overflow-y-auto pr-2'>
+                      {customFeatures.map((feature) => (
+                        <FeatureCard
+                          key={feature.id}
+                          feature={feature}
+                          isSelected={isFeatureSelected(feature.id)}
+                          onToggle={handleFeatureToggle}
+                          isAnnual={isAnnual}
+                        />
+                      ))}
                     </div>
                   </div>
-
-                  {/* Title & Subtitle */}
-                  <div className='mb-6'>
-                    <h3 className='text-2xl font-bold text-white mb-2'>
-                      <span className='text-[#AE3537]'>Custom</span> Plan
-                    </h3>
-                    <p className='text-[#AE3537] font-semibold'>Build Your Own</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className='mb-6'>
-                    <div className='text-4xl font-bold text-white mb-2'>
-                      ${customPrice.monthly > 0 ? (isAnnual ? Math.floor(customPrice.yearly / 12) : customPrice.monthly) : 0}
-                      <span className='text-lg text-gray-400'>/month</span>
-                    </div>
-                    {isAnnual && customPrice.yearly > 0 && (
-                      <div className='text-sm text-gray-400'>
-                        Billed annually (${customPrice.yearly})
-                      </div>
-                    )}
-                    {customPrice.monthly === 0 && (
-                      <div className='text-sm text-gray-400'>
-                        Select features to see pricing
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Description */}
-                  <p className='text-gray-400 text-sm leading-relaxed mb-6'>
-                    {selectedFeatures.length > 0
-                      ? `Your personalized membership with ${selectedFeatures.length} selected feature${selectedFeatures.length !== 1 ? 's' : ''}. Perfect for your specific wellness needs.`
-                      : 'Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.'
-                    }
-                  </p>
-
-                  {/* CTA Button */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log('Custom plan button clicked, selected features:', selectedFeatures);
-                      if (selectedFeatures.length > 0) {
-                        // Add your custom plan logic here
-                        alert(`Custom plan created with ${selectedFeatures.length} features!`);
-                      }
-                    }}
-                    className={`w-full py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 ${
-                      selectedFeatures.length > 0
-                        ? 'bg-[#AE3537] text-white hover:bg-[#8B2A2D] hover:shadow-xl hover:shadow-[#AE3537]/30 focus:ring-[#AE3537]'
-                        : 'bg-gray-700 text-gray-400 cursor-not-allowed focus:ring-gray-500'
-                    }`}
-                    disabled={selectedFeatures.length === 0}
-                  >
-                    {selectedFeatures.length > 0 ? 'Build Custom Plan' : 'Select Features First'}
-                  </button>
                 </div>
 
-                {/* Right Column - Feature Selection */}
-                <div>
-                  <h4 className='text-lg font-semibold text-white mb-4'>Select Features:</h4>
-                  <div className='space-y-3 max-h-80 overflow-y-auto pr-2'>
-                    {customFeatures.map(feature => (
-                      <FeatureCard
-                        key={feature.id}
-                        feature={feature}
-                        isSelected={isFeatureSelected(feature.id)}
-                        onToggle={handleFeatureToggle}
-                        isAnnual={isAnnual}
-                      />
-                    ))}
-                  </div>
-                </div>
+                {/* Border Glow */}
+                <div className='absolute -inset-0.5 opacity-0 group-hover:opacity-40 transition-opacity duration-700 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl blur-2xl -z-10' />
               </div>
-
-              {/* Border Glow */}
-              <div className='absolute -inset-0.5 opacity-0 group-hover:opacity-40 transition-opacity duration-700 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl blur-2xl -z-10' />
-            </div>
             </div>
           </div>
         </div>
@@ -656,8 +644,7 @@ export default function MembershipExcellence() {
             <div className='text-center'>
               <Award className='w-16 h-16 text-[#AE3537] mx-auto mb-8' />
               <h3 className='text-4xl font-bold text-white mb-6'>
-                Founding Member{' '}
-                <span className='text-[#AE3537]'>Guarantee</span>
+                Founding Member <span className='text-[#AE3537]'>Guarantee</span>
               </h3>
               <div className='grid md:grid-cols-3 gap-8 mb-8'>
                 <div className='text-center'>
@@ -674,7 +661,9 @@ export default function MembershipExcellence() {
                 </div>
               </div>
               <p className='text-xl text-white leading-relaxed mb-8 max-w-4xl mx-auto'>
-                As a founding member of Crown Wellness Club, you're not just joining a fitness facility - you're becoming part of Azerbaijan's premier wellness revolution. Enjoy exclusive benefits, priority access, and the prestige of being among the first to experience luxury redefined.
+                As a founding member of Crown Wellness Club, you&apos;re not just joining a fitness facility - you&apos;re
+                becoming part of Azerbaijan&apos;s premier wellness revolution. Enjoy exclusive benefits, priority access,
+                and the prestige of being among the first to experience luxury redefined.
               </p>
               <button className='bg-[#AE3537] text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#AE3537]/30'>
                 Claim Founding Status

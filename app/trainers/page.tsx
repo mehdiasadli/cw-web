@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Crown, CheckCircle, Clock, MapPin, Phone } from 'lucide-react';
+import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Crown, Clock } from 'lucide-react';
 
 interface Trainer {
   id: number;
@@ -21,7 +21,6 @@ interface Trainer {
 
 export default function TrainersPage() {
   const [isVisible, setIsVisible] = useState(false);
-  const [selectedTrainer, setSelectedTrainer] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -105,15 +104,15 @@ export default function TrainersPage() {
     {
       id: 5,
       name: 'Aysel Mammadova',
-      title: 'Women\'s Wellness Specialist',
-      specialization: ['Women\'s Fitness', 'Prenatal Training', 'Cultural Wellness'],
+      title: "Women's Wellness Specialist",
+      specialization: ["Women's Fitness", 'Prenatal Training', 'Cultural Wellness'],
       experience: '7+ Years',
       languages: ['Azerbaijani', 'Turkish', 'English'],
       image: '/trainer-5.jpg',
-      bio: 'Aysel leads our women\'s sanctuary programs, providing culturally sensitive fitness and wellness solutions.',
-      certifications: ['Women\'s Fitness Specialist', 'Prenatal Exercise', 'Cultural Wellness'],
-      achievements: ['Women\'s Wellness Pioneer', 'Cultural Excellence Award'],
-      availability: 'Women\'s Hours: 8:00-22:00',
+      bio: "Aysel leads our women's sanctuary programs, providing culturally sensitive fitness and wellness solutions.",
+      certifications: ["Women's Fitness Specialist", 'Prenatal Exercise', 'Cultural Wellness'],
+      achievements: ["Women's Wellness Pioneer", 'Cultural Excellence Award'],
+      availability: "Women's Hours: 8:00-22:00",
       color: 'from-teal-500 to-cyan-600',
       rating: 4.9,
     },
@@ -167,7 +166,8 @@ export default function TrainersPage() {
               EXPERT <span className='text-[#AE3537]'>TRAINERS</span>
             </h1>
             <p className='text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8'>
-              Meet our world-class team of certified professionals dedicated to your wellness journey. Each trainer brings international expertise and cultural sensitivity to deliver exceptional results.
+              Meet our world-class team of certified professionals dedicated to your wellness journey. Each trainer
+              brings international expertise and cultural sensitivity to deliver exceptional results.
             </p>
 
             {/* Stats */}
@@ -305,16 +305,15 @@ export default function TrainersPage() {
                     </div>
 
                     {/* Book Session Button */}
-                    <button
-                      onClick={() => setSelectedTrainer(trainer.id)}
-                      className='w-full bg-[#AE3537] text-white py-3 rounded-xl font-semibold hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105'
-                    >
+                    <button className='w-full bg-[#AE3537] text-white py-3 rounded-xl font-semibold hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105'>
                       Book Session
                     </button>
                   </div>
 
                   {/* Border Glow */}
-                  <div className={`absolute -inset-0.5 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-gradient-to-br ${trainer.color} rounded-3xl blur-xl -z-10`}></div>
+                  <div
+                    className={`absolute -inset-0.5 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-gradient-to-br ${trainer.color} rounded-3xl blur-xl -z-10`}
+                  ></div>
                 </div>
               </div>
             ))}
@@ -330,7 +329,8 @@ export default function TrainersPage() {
               Ready to Start Your <span className='text-[#AE3537]'>Journey?</span>
             </h2>
             <p className='text-xl text-gray-300 mb-8 leading-relaxed'>
-              Our expert trainers are ready to create a personalized wellness program tailored to your goals, preferences, and cultural needs.
+              Our expert trainers are ready to create a personalized wellness program tailored to your goals,
+              preferences, and cultural needs.
             </p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <button className='bg-[#AE3537] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105'>

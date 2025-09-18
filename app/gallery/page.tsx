@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Camera, Play, X, ChevronLeft, ChevronRight, MapPin, Clock, Users, Star, Dumbbell, Waves, Crown, Sparkles } from 'lucide-react';
+import { Camera, Play, X, ChevronLeft, ChevronRight, Users, Star, Dumbbell, Waves, Crown } from 'lucide-react';
 
 interface GalleryItem {
   id: number;
@@ -133,9 +133,8 @@ export default function GalleryPage() {
     // Add more gallery items...
   ];
 
-  const filteredItems = selectedCategory === 'all'
-    ? galleryItems
-    : galleryItems.filter(item => item.category === selectedCategory);
+  const filteredItems =
+    selectedCategory === 'all' ? galleryItems : galleryItems.filter((item) => item.category === selectedCategory);
 
   const openModal = (item: GalleryItem) => {
     setSelectedItem(item);
@@ -150,7 +149,7 @@ export default function GalleryPage() {
   const navigateModal = (direction: 'prev' | 'next') => {
     if (!selectedItem) return;
 
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedItem.id);
+    const currentIndex = filteredItems.findIndex((item) => item.id === selectedItem.id);
     let newIndex;
 
     if (direction === 'prev') {
@@ -186,7 +185,8 @@ export default function GalleryPage() {
               VISUAL <span className='text-[#AE3537]'>GALLERY</span>
             </h1>
             <p className='text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8'>
-              Explore the luxury and elegance of Crown Wellness Club through our comprehensive visual gallery. Witness the beauty of Azerbaijan's premier wellness destination.
+              Explore the luxury and elegance of Crown Wellness Club through our comprehensive visual gallery. Witness
+              the beauty of Azerbaijan&apos;s premier wellness destination.
             </p>
 
             {/* Stats */}
@@ -225,7 +225,7 @@ export default function GalleryPage() {
           </div>
 
           <div className='grid md:grid-cols-2 lg:grid-cols-5 gap-6'>
-            {categories.map((category, index) => (
+            {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
@@ -234,9 +234,13 @@ export default function GalleryPage() {
                 }`}
               >
                 <div className='flex items-center mb-4'>
-                  <div className={`p-3 rounded-xl mr-4 transition-colors duration-300 ${
-                    selectedCategory === category.id ? 'bg-[#AE3537]/30' : 'bg-[#AE3537]/20 group-hover:bg-[#AE3537]/30'
-                  }`}>
+                  <div
+                    className={`p-3 rounded-xl mr-4 transition-colors duration-300 ${
+                      selectedCategory === category.id
+                        ? 'bg-[#AE3537]/30'
+                        : 'bg-[#AE3537]/20 group-hover:bg-[#AE3537]/30'
+                    }`}
+                  >
                     <category.icon className='w-6 h-6 text-[#AE3537]' />
                   </div>
                 </div>
@@ -244,9 +248,7 @@ export default function GalleryPage() {
                 <p className='text-gray-400 text-sm mb-3'>{category.description}</p>
                 <div className='flex items-center justify-between'>
                   <span className='text-[#AE3537] font-medium text-sm'>{category.count} items</span>
-                  {selectedCategory === category.id && (
-                    <div className='w-2 h-2 bg-[#AE3537] rounded-full'></div>
-                  )}
+                  {selectedCategory === category.id && <div className='w-2 h-2 bg-[#AE3537] rounded-full'></div>}
                 </div>
               </button>
             ))}
@@ -259,7 +261,8 @@ export default function GalleryPage() {
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-              {categories.find(cat => cat.id === selectedCategory)?.name || 'Gallery'} <span className='text-[#AE3537]'>Collection</span>
+              {categories.find((cat) => cat.id === selectedCategory)?.name || 'Gallery'}{' '}
+              <span className='text-[#AE3537]'>Collection</span>
             </h2>
           </div>
 
@@ -268,62 +271,66 @@ export default function GalleryPage() {
             <div className='mb-16'>
               <h3 className='text-2xl font-bold text-white mb-8'>Featured Highlights</h3>
               <div className='grid md:grid-cols-3 gap-8'>
-                {galleryItems.filter(item => item.featured).map((item, index) => (
-                  <div
-                    key={item.id}
-                    className={`group transition-all duration-1000 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                    }`}
-                    style={{ transitionDelay: `${index * 150}ms` }}
-                  >
-                    <div className='relative bg-gray-800/50 border border-gray-700 rounded-3xl overflow-hidden hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer'
-                         onClick={() => openModal(item)}>
-                      {/* Image/Video Placeholder */}
-                      <div className='relative h-64 bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center'>
-                        <div className='absolute inset-0 bg-black/20'></div>
-                        <div className='relative z-10 text-center'>
-                          {item.type === 'video' ? (
-                            <div className='w-16 h-16 bg-[#AE3537]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm'>
-                              <Play className='w-8 h-8 text-[#AE3537] ml-1' />
-                            </div>
-                          ) : (
-                            <div className='w-16 h-16 bg-[#AE3537]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm'>
-                              <Camera className='w-8 h-8 text-[#AE3537]' />
-                            </div>
-                          )}
-                          <div className='text-white font-semibold'>{item.title}</div>
+                {galleryItems
+                  .filter((item) => item.featured)
+                  .map((item, index) => (
+                    <div
+                      key={item.id}
+                      className={`group transition-all duration-1000 ${
+                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                      }`}
+                      style={{ transitionDelay: `${index * 150}ms` }}
+                    >
+                      <div
+                        className='relative bg-gray-800/50 border border-gray-700 rounded-3xl overflow-hidden hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer'
+                        onClick={() => openModal(item)}
+                      >
+                        {/* Image/Video Placeholder */}
+                        <div className='relative h-64 bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center'>
+                          <div className='absolute inset-0 bg-black/20'></div>
+                          <div className='relative z-10 text-center'>
+                            {item.type === 'video' ? (
+                              <div className='w-16 h-16 bg-[#AE3537]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm'>
+                                <Play className='w-8 h-8 text-[#AE3537] ml-1' />
+                              </div>
+                            ) : (
+                              <div className='w-16 h-16 bg-[#AE3537]/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm'>
+                                <Camera className='w-8 h-8 text-[#AE3537]' />
+                              </div>
+                            )}
+                            <div className='text-white font-semibold'>{item.title}</div>
+                          </div>
+
+                          {/* Featured Badge */}
+                          <div className='absolute top-4 left-4 bg-[#AE3537] text-white px-3 py-1 rounded-full text-xs font-bold flex items-center'>
+                            <Star className='w-3 h-3 mr-1 fill-current' />
+                            Featured
+                          </div>
+
+                          {/* Type Badge */}
+                          <div className='absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1'>
+                            {item.type === 'video' ? (
+                              <Play className='w-4 h-4 text-white' />
+                            ) : (
+                              <Camera className='w-4 h-4 text-white' />
+                            )}
+                          </div>
                         </div>
 
-                        {/* Featured Badge */}
-                        <div className='absolute top-4 left-4 bg-[#AE3537] text-white px-3 py-1 rounded-full text-xs font-bold flex items-center'>
-                          <Star className='w-3 h-3 mr-1 fill-current' />
-                          Featured
+                        <div className='p-6'>
+                          <h4 className='text-xl font-bold text-white mb-2'>{item.title}</h4>
+                          <p className='text-gray-400 text-sm mb-4'>{item.description}</p>
+                          <div className='flex items-center justify-between'>
+                            <span className='text-[#AE3537] text-sm font-medium capitalize'>{item.category}</span>
+                            <div className='text-gray-400 text-xs'>Click to view</div>
+                          </div>
                         </div>
 
-                        {/* Type Badge */}
-                        <div className='absolute top-4 right-4 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1'>
-                          {item.type === 'video' ? (
-                            <Play className='w-4 h-4 text-white' />
-                          ) : (
-                            <Camera className='w-4 h-4 text-white' />
-                          )}
-                        </div>
+                        {/* Border Glow */}
+                        <div className='absolute -inset-0.5 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-gradient-to-br from-[#AE3537] to-[#AE3537] rounded-3xl blur-xl -z-10'></div>
                       </div>
-
-                      <div className='p-6'>
-                        <h4 className='text-xl font-bold text-white mb-2'>{item.title}</h4>
-                        <p className='text-gray-400 text-sm mb-4'>{item.description}</p>
-                        <div className='flex items-center justify-between'>
-                          <span className='text-[#AE3537] text-sm font-medium capitalize'>{item.category}</span>
-                          <div className='text-gray-400 text-xs'>Click to view</div>
-                        </div>
-                      </div>
-
-                      {/* Border Glow */}
-                      <div className='absolute -inset-0.5 opacity-0 group-hover:opacity-30 transition-opacity duration-700 bg-gradient-to-br from-[#AE3537] to-[#AE3537] rounded-3xl blur-xl -z-10'></div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </div>
           )}
@@ -338,8 +345,10 @@ export default function GalleryPage() {
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className='relative bg-gray-800/50 border border-gray-700 rounded-2xl overflow-hidden hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer aspect-square'
-                     onClick={() => openModal(item)}>
+                <div
+                  className='relative bg-gray-800/50 border border-gray-700 rounded-2xl overflow-hidden hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm cursor-pointer aspect-square'
+                  onClick={() => openModal(item)}
+                >
                   {/* Image/Video Placeholder */}
                   <div className='relative h-full bg-gradient-to-br from-gray-600 to-gray-800 flex items-center justify-center'>
                     <div className='absolute inset-0 bg-black/20'></div>

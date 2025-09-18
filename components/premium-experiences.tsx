@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, Users, Clock, Dumbbell, Waves, Sparkles, Shield, Coffee, ShoppingBag } from 'lucide-react';
+import { X, Star, Users, Dumbbell, Waves, Sparkles, Shield, Coffee, ShoppingBag } from 'lucide-react';
+import Image from 'next/image';
 import Banner from './banner';
 
 interface ExperienceCard {
@@ -216,9 +217,11 @@ export default function PremiumExperiences() {
 
               {/* Image */}
               <div className='relative h-64 overflow-hidden'>
-                <img
+                <Image
                   src={experience.image}
                   alt={experience.title}
+                  width={800}
+                  height={256}
                   className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
@@ -287,7 +290,13 @@ export default function PremiumExperiences() {
 
               {/* Image */}
               <div className='relative h-80'>
-                <img src={selectedCard.image} alt={selectedCard.title} className='w-full h-full object-cover' />
+                <Image
+                  src={selectedCard.image}
+                  alt={selectedCard.title}
+                  width={800}
+                  height={320}
+                  className='w-full h-full object-cover'
+                />
                 <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
                 <div className='absolute bottom-6 left-6 text-white'>{selectedCard.icon}</div>
               </div>

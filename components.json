@@ -1,0 +1,33 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": "",
+    "theme": {
+      "extend": {
+        "colors": {
+          "crown-primary": "#AE3537",
+          "crown-complementary": "#FFDAC9",
+          "crown-dark": "#1F1F1F",
+          "crown-white": "#FDF4F4",
+          "crown-dark-red": "#661E1F"
+        }
+      }
+    }
+  },
+  "iconLibrary": "lucide",
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": {}
+}

@@ -325,7 +325,7 @@ export default function MembershipExcellence() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (sectionRef.current) {
@@ -336,7 +336,7 @@ export default function MembershipExcellence() {
   }, []);
 
   return (
-    <section ref={sectionRef} className='py-20 px-6 bg-[#0a0a0a]'>
+    <section id='membership' ref={sectionRef} className='py-20 px-6 bg-[#0a0a0a]'>
       <div className='max-w-7xl mx-auto'>
         {/* Section Header */}
         <div

@@ -24,14 +24,15 @@ const navLinks: NavLink[] = [
 ];
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'az', name: 'Azerbaijani', flag: '🇦🇿' },
-  { code: 'ru', name: 'Russian', flag: '🇷🇺' },
+  { code: 'en', name: 'English', flag: 'EN' },
+  { code: 'az', name: 'Azerbaijani', flag: 'AZ' },
+  { code: 'ru', name: 'Russian', flag: 'RU' },
 ];
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const pathname = usePathname();
 
@@ -44,11 +45,34 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.language-dropdown')) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    if (isLanguageDropdownOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isLanguageDropdownOpen]);
+
   const handleNavClick = (href: string, type: string) => {
-    if (type === 'section' && pathname === '/') {
-      const element = document.querySelector(href.replace('/', ''));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    if (type === 'section') {
+      if (pathname === '/') {
+        // If on home page, scroll to section
+        const element = document.querySelector(href.replace('/', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // If on another page, navigate to home page with hash
+        window.location.href = href;
       }
     }
     setIsMobileMenuOpen(false);
@@ -113,21 +137,24 @@ export default function Header() {
           {/* Language Selector & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
             {/* Language Selector */}
-            <div className="relative group">
-              <button className="flex items-center space-x-2 px-3 py-2 text-white hover:text-crown-primary transition-all duration-300 rounded-lg hover:bg-white/5">
-                <span className="text-lg">
+            <div className="relative language-dropdown">
+              <button
+                onClick={() => setIsLanguageDropdownOpen(!isLanguageDropdownOpen)}
+                className="flex items-center space-x-2 px-3 py-2 text-white hover:text-crown-primary transition-all duration-300 rounded-lg hover:bg-white/5"
+              >
+                <span className="text-xs font-bold bg-crown-primary text-white px-2 py-1 rounded">
                   {languages.find((lang) => lang.code === selectedLanguage)?.flag}
                 </span>
                 <span className="hidden sm:block font-medium w-20 text-left">
                   {languages.find((lang) => lang.code === selectedLanguage)?.name}
                 </span>
-                <svg className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-4 h-4 transition-transform duration-200 ${isLanguageDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
               {/* Language Dropdown */}
-              <div className="absolute top-full right-0 mt-3 min-w-[180px] py-2 bg-black/95 backdrop-blur-xl rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-95 group-hover:scale-100">
+              <div className={`absolute top-full right-0 mt-3 min-w-[180px] py-2 bg-black/95 backdrop-blur-xl rounded-xl shadow-2xl transition-all duration-300 transform ${isLanguageDropdownOpen ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-95'}`}>
                 <div className="px-3 py-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
                   Select Language
                 </div>
@@ -135,12 +162,15 @@ export default function Header() {
                 {languages.map((language) => (
                   <button
                     key={language.code}
-                    onClick={() => setSelectedLanguage(language.code)}
+                    onClick={() => {
+                      setSelectedLanguage(language.code);
+                      setIsLanguageDropdownOpen(false);
+                    }}
                     className={`flex items-center space-x-3 w-full px-4 py-3 text-white hover:text-crown-primary hover:bg-white/10 transition-all duration-200 group/item ${
                       selectedLanguage === language.code ? 'bg-crown-primary/20 text-crown-primary' : ''
                     }`}
                   >
-                    <span className="text-lg">{language.flag}</span>
+                    <span className="text-xs font-bold bg-crown-primary text-white px-2 py-1 rounded">{language.flag}</span>
                     <span className="font-medium">{language.name}</span>
                     {selectedLanguage === language.code && (
                       <svg className="w-4 h-4 ml-auto text-crown-primary" fill="currentColor" viewBox="0 0 20 20">

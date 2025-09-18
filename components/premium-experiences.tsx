@@ -185,7 +185,7 @@ export default function PremiumExperiences() {
   const [selectedCard, setSelectedCard] = useState<ExperienceCard | null>(null);
 
   return (
-    <section className='py-20 px-6 bg-[#202020]'>
+    <section id='experiences' className='py-20 px-6 bg-[#202020]'>
       <div className='max-w-7xl mx-auto'>
         {/* Section Header */}
         <div className='text-center mb-16'>

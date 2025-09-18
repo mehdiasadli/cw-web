@@ -122,7 +122,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section ref={sectionRef} className='py-20 px-6 bg-[#0a0a0a] relative overflow-hidden'>
+    <section id='contact' ref={sectionRef} className='py-20 px-6 bg-[#0a0a0a] relative overflow-hidden'>
       {/* Background Effects */}
       <div className='absolute inset-0'>
         <div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#AE3537] to-transparent'></div>

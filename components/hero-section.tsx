@@ -5,7 +5,7 @@ import { Play, Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import Logo from './logo';
 
 export default function HeroSection() {
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
@@ -20,6 +20,8 @@ export default function HeroSection() {
         muted={isMuted}
         className="absolute inset-0 w-full h-full object-cover z-0"
         playsInline
+        preload="auto"
+        controls={false}
       >
         <source
           src="https://res.cloudinary.com/doep7sd3t/video/upload/v1757633456/091254_c6vohz.mp4"
@@ -70,19 +72,40 @@ export default function HeroSection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-          <button className="cursor-pointer bg-[#AE3537] hover:bg-[#8B2A2D] text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl">
+          <button
+            onClick={() => {
+              const element = document.getElementById('experiences');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="cursor-pointer bg-[#AE3537] hover:bg-[#8B2A2D] text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl">
             <Logo color="white" size={24} />
             Experience Crown
           </button>
 
-          <button className="cursor-pointer bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl border border-white/20">
+          <button
+            onClick={() => {
+              const element = document.getElementById('membership');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="cursor-pointer bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl border border-white/20">
             <Play size={20} />
             Book a Tour
           </button>
         </div>
 
         {/* Scroll Down Indicator */}
-        <div className="flex flex-col items-center cursor-pointer">
+        <div
+          onClick={() => {
+            const element = document.getElementById('experiences');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="flex flex-col items-center cursor-pointer">
           <p className="text-sm tracking-widest mb-4 text-gray-300">
             DISCOVER LUXURY BELOW
           </p>

@@ -42,22 +42,22 @@ const contactInfo: ContactInfo[] = [
 const socialLinks: SocialLink[] = [
   {
     icon: Instagram,
-    href: '#',
+    href: 'https://instagram.com',
     label: 'Instagram',
   },
   {
     icon: Facebook,
-    href: '#',
+    href: 'https://facebook.com',
     label: 'Facebook',
   },
   {
     icon: Twitter,
-    href: '#',
+    href: 'https://x.com',
     label: 'Twitter',
   },
   {
     icon: Linkedin,
-    href: '#',
+    href: 'https://linkedin.com',
     label: 'LinkedIn',
   },
 ];
@@ -192,6 +192,8 @@ export default function ContactSection() {
                     href={social.href}
                     className='group flex items-center justify-center w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-full hover:bg-[#AE3537] hover:border-[#AE3537] transition-all duration-300 hover:scale-110 backdrop-blur-sm'
                     aria-label={social.label}
+                    target='_blank'
+                    rel='noopener noreferrer'
                   >
                     <social.icon className='w-5 h-5 text-white transition-colors duration-300' />
                   </a>

@@ -80,7 +80,7 @@ export default function HeroSection() {
             className='cursor-pointer bg-[#AE3537] hover:bg-[#8B2A2D] text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl'
           >
             <Logo color='white' size={24} />
-            Experience Crown
+            Join the Community
           </button>
 
           <button

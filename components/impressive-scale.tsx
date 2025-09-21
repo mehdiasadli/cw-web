@@ -27,7 +27,7 @@ const scaleData: ScaleCard[] = [
     id: 1,
     icon: Building2,
     value: 5000,
-    valueSuffix: 'm²',
+    valueSuffix: '+ m²',
     title: 'Premium Space',
     subtitle: 'Luxury Facilities',
     description:
@@ -257,10 +257,10 @@ export default function ImpressiveScale() {
       </div>
 
       <Banner
-        title="First interactive fitness in Azerbaijan"
-        titleStyle="mixed"
-        subtitle="Luxury Wellness Destination"
-        description="Pioneering the future of premium fitness and wellness in Baku with unprecedented luxury, cultural sensitivity, and world-class amenities. Setting new standards that honor both international excellence and local values."
+        title='First interactive fitness in Azerbaijan'
+        titleStyle='mixed'
+        subtitle='Luxury Wellness Destination'
+        description='Pioneering the future of premium fitness and wellness in Baku with unprecedented luxury, cultural sensitivity, and world-class amenities. Setting new standards that honor both international excellence and local values.'
       />
     </section>
   );

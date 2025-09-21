@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Building2, Dumbbell, Users, Sparkles, Star } from 'lucide-react';
 import Banner from './banner';
 
@@ -22,16 +23,15 @@ interface ScaleCard {
   borderClasses: string;
 }
 
-const scaleData: ScaleCard[] = [
+const getScaleData = (t: (key: string) => string): ScaleCard[] => [
   {
     id: 1,
     icon: Building2,
     value: 5000,
-    valueSuffix: '+ m²',
-    title: 'Premium Space',
-    subtitle: 'Luxury Facilities',
-    description:
-      'Luxury wellness facility spanning over 5000 square meters of premium amenities and world-class equipment.',
+    valueSuffix: t('impressiveScale.stats.premiumSpace.suffix'),
+    title: t('impressiveScale.stats.premiumSpace.title'),
+    subtitle: t('impressiveScale.stats.premiumSpace.subtitle'),
+    description: t('impressiveScale.stats.premiumSpace.description'),
     color: 'from-purple-500 to-pink-500',
     borderGlowClasses: 'hover:border-purple-500/50',
     bgGlowClasses: 'group-hover:opacity-20',
@@ -45,11 +45,10 @@ const scaleData: ScaleCard[] = [
     id: 2,
     icon: Dumbbell,
     value: 300,
-    valueSuffix: '+',
-    title: 'Premium Equipment',
-    subtitle: 'International Brands',
-    description:
-      'International brands equipment providing world-class training experience with cutting-edge technology.',
+    valueSuffix: t('impressiveScale.stats.premiumEquipment.suffix'),
+    title: t('impressiveScale.stats.premiumEquipment.title'),
+    subtitle: t('impressiveScale.stats.premiumEquipment.subtitle'),
+    description: t('impressiveScale.stats.premiumEquipment.description'),
     color: 'from-blue-500 to-cyan-500',
     borderGlowClasses: 'hover:border-blue-500/50',
     bgGlowClasses: 'group-hover:opacity-20',
@@ -63,11 +62,10 @@ const scaleData: ScaleCard[] = [
     id: 3,
     icon: Users,
     value: 50,
-    valueSuffix: '+',
-    title: 'Expert Professionals',
-    subtitle: 'Certified Specialists',
-    description:
-      'Certified specialists including trainers, therapists, and wellness experts dedicated to your success.',
+    valueSuffix: t('impressiveScale.stats.expertProfessionals.suffix'),
+    title: t('impressiveScale.stats.expertProfessionals.title'),
+    subtitle: t('impressiveScale.stats.expertProfessionals.subtitle'),
+    description: t('impressiveScale.stats.expertProfessionals.description'),
     color: 'from-orange-500 to-red-500',
     borderGlowClasses: 'hover:border-orange-500/50',
     bgGlowClasses: 'group-hover:opacity-20',
@@ -81,11 +79,10 @@ const scaleData: ScaleCard[] = [
     id: 4,
     icon: Sparkles,
     value: 150,
-    valueSuffix: '+',
-    title: 'Luxury Services',
-    subtitle: 'Comprehensive Wellness',
-    description:
-      'Comprehensive wellness services from fitness training to spa treatments, all designed for luxury experiences.',
+    valueSuffix: t('impressiveScale.stats.luxuryServices.suffix'),
+    title: t('impressiveScale.stats.luxuryServices.title'),
+    subtitle: t('impressiveScale.stats.luxuryServices.subtitle'),
+    description: t('impressiveScale.stats.luxuryServices.description'),
     color: 'from-green-500 to-emerald-500',
     borderGlowClasses: 'hover:border-green-500/50',
     bgGlowClasses: 'group-hover:opacity-20',
@@ -157,8 +154,11 @@ function CountUpAnimation({
 }
 
 export default function ImpressiveScale() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  const scaleData = getScaleData(t);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -183,12 +183,9 @@ export default function ImpressiveScale() {
         {/* Section Header */}
         <div className='text-center mb-16'>
           <h2 className='text-5xl md:text-6xl font-bold mb-6 text-white'>
-            IMPRESSIVE <span className='text-[#AE3537]'>SCALE</span>
+            {t('impressiveScale.title')} <span className='text-[#AE3537]'>{t('impressiveScale.titleHighlight')}</span>
           </h2>
-          <p className='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>
-            First interactive fitness in Azerbaijan luxury wellness club sets unprecedented standards with world-class
-            facilities and cultural excellence.
-          </p>
+          <p className='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>{t('impressiveScale.subtitle')}</p>
         </div>
 
         {/* Cards Grid */}
@@ -257,10 +254,10 @@ export default function ImpressiveScale() {
       </div>
 
       <Banner
-        title='First interactive fitness in Azerbaijan'
+        title={t('impressiveScale.banner.title')}
         titleStyle='mixed'
-        subtitle='Luxury Wellness Destination'
-        description='Pioneering the future of premium fitness and wellness in Baku with unprecedented luxury, cultural sensitivity, and world-class amenities. Setting new standards that honor both international excellence and local values.'
+        subtitle={t('impressiveScale.banner.subtitle')}
+        description={t('impressiveScale.banner.description')}
       />
     </section>
   );

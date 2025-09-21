@@ -6,7 +6,10 @@
     "gallery": "Gallery",
     "premiumExperiences": "Premium Experiences",
     "membership": "Membership",
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "support": "Support"
   },
   "language": {
     "selectLanguage": "Select Language",
@@ -26,29 +29,273 @@
     "muteVideo": "Mute video",
     "unmuteVideo": "Unmute video"
   },
-  "buttons": {
-    "learnMore": "Learn More",
-    "getStarted": "Get Started",
-    "contact": "Contact Us",
-    "viewAll": "View All",
-    "bookNow": "Book Now"
+  "impressiveScale": {
+    "title": "IMPRESSIVE",
+    "titleHighlight": "SCALE",
+    "subtitle": "First interactive fitness in Azerbaijan luxury wellness club sets unprecedented standards with world-class facilities and cultural excellence.",
+    "stats": {
+      "premiumSpace": {
+        "title": "Premium Space",
+        "subtitle": "Luxury Facilities",
+        "description": "Luxury wellness facility spanning over 5000 square meters of premium amenities and world-class equipment.",
+        "value": "5000",
+        "suffix": "+ m²"
+      },
+      "premiumEquipment": {
+        "title": "Premium Equipment",
+        "subtitle": "International Brands",
+        "description": "International brands equipment providing world-class training experience with cutting-edge technology.",
+        "value": "300",
+        "suffix": "+"
+      },
+      "expertProfessionals": {
+        "title": "Expert Professionals",
+        "subtitle": "Certified Specialists",
+        "description": "Certified specialists including trainers, therapists, and wellness experts dedicated to your success.",
+        "value": "50",
+        "suffix": "+"
+      },
+      "luxuryServices": {
+        "title": "Luxury Services",
+        "subtitle": "Comprehensive Wellness",
+        "description": "Comprehensive wellness services from fitness training to spa treatments, all designed for luxury experiences.",
+        "value": "150",
+        "suffix": "+"
+      }
+    },
+    "banner": {
+      "title": "First interactive fitness in Azerbaijan",
+      "subtitle": "Luxury Wellness Destination",
+      "description": "Pioneering the future of premium fitness and wellness in Baku with unprecedented luxury, cultural sensitivity, and world-class amenities. Setting new standards that honor both international excellence and local values."
+    }
   },
-  "common": {
-    "loading": "Loading...",
-    "error": "Error",
-    "success": "Success",
-    "cancel": "Cancel",
-    "confirm": "Confirm",
-    "close": "Close",
-    "save": "Save",
-    "edit": "Edit",
-    "delete": "Delete",
-    "search": "Search",
-    "filter": "Filter",
-    "sort": "Sort",
-    "next": "Next",
-    "previous": "Previous",
-    "submit": "Submit"
+  "premiumExperiences": {
+    "title": "PREMIUM",
+    "titleHighlight": "EXPERIENCES",
+    "subtitle": "Discover our world-class facilities and services designed to elevate your wellness journey. Each space is crafted with luxury, cultural sensitivity, and your complete satisfaction in mind.",
+    "experiences": {
+      "fitnessZone": {
+        "title": "Fitness Zone",
+        "subtitle": "Premium Training",
+        "description": "State-of-the-art fitness equipment and personalized training programs designed to maximize your workout efficiency and results.",
+        "badge": "Most Popular",
+        "stats": {
+          "equipment": "Equipment",
+          "trainers": "Trainers",
+          "classes": "Classes"
+        },
+        "features": {
+          "title": "Fitness Amenities",
+          "items": [
+            "Advanced cardio equipment",
+            "Professional weight training area",
+            "Functional training zone",
+            "Personal training sessions",
+            "Group fitness classes",
+            "Performance tracking system"
+          ]
+        }
+      },
+      "spaZone": {
+        "title": "Spa Zone",
+        "subtitle": "Luxury Relaxation",
+        "description": "Indulge in world-class spa treatments and therapeutic services designed to rejuvenate your body, mind, and spirit.",
+        "badge": "Exclusive",
+        "stats": {
+          "treatmentRooms": "Treatment Rooms",
+          "therapists": "Therapists",
+          "services": "Services"
+        },
+        "features": {
+          "title": "Spa Services",
+          "items": [
+            "Full body massages",
+            "Facial treatments",
+            "Aromatherapy sessions",
+            "Hot stone therapy",
+            "Couples treatment rooms",
+            "Relaxation lounges"
+          ]
+        }
+      },
+      "beautyZone": {
+        "title": "Beauty Zone",
+        "subtitle": "Aesthetic Excellence",
+        "description": "Professional beauty services and aesthetic treatments to enhance your natural beauty with the latest techniques and premium products.",
+        "stats": {
+          "specialists": "Specialists",
+          "services": "Services",
+          "premiumBrands": "Premium Brands"
+        },
+        "features": {
+          "title": "Beauty Services",
+          "items": [
+            "Hair styling & coloring",
+            "Professional makeup",
+            "Nail art & manicures",
+            "Eyebrow & lash services",
+            "Skincare consultations",
+            "Anti-aging treatments"
+          ]
+        }
+      },
+      "womensZone": {
+        "title": "Women's Zone",
+        "subtitle": "Private Sanctuary",
+        "description": "A culturally sensitive, private area exclusively for women, featuring dedicated fitness equipment, spa services, and relaxation spaces.",
+        "badge": "Cultural Respect",
+        "stats": {
+          "privateArea": "Private Area",
+          "femaleStaff": "Female Staff",
+          "exclusiveHours": "Exclusive Hours"
+        },
+        "features": {
+          "title": "Exclusive Amenities",
+          "items": [
+            "Women-only fitness area",
+            "Private spa treatments",
+            "Female-only swimming pool",
+            "Dedicated changing rooms",
+            "Ladies-only classes",
+            "Cultural prayer space"
+          ]
+        }
+      },
+      "fitbarRestaurant": {
+        "title": "Fitbar Restaurant",
+        "subtitle": "Nutrition Excellence",
+        "description": "Gourmet healthy dining experience featuring nutritionist-designed menus, fresh ingredients, and premium beverages for optimal wellness.",
+        "stats": {
+          "menuItems": "Menu Items",
+          "chefs": "Chefs",
+          "seating": "Seating"
+        },
+        "features": {
+          "title": "Dining Features",
+          "items": [
+            "Nutritionist-designed menus",
+            "Organic & locally sourced",
+            "Protein-rich meal options",
+            "Fresh juice & smoothie bar",
+            "Dietary restriction options",
+            "Premium coffee selection"
+          ]
+        }
+      },
+      "retailZone": {
+        "title": "Retail Zone",
+        "subtitle": "Lifestyle Shopping",
+        "description": "Curated selection of premium wellness products, supplements, athletic wear, and luxury lifestyle items for the complete wellness experience.",
+        "stats": {
+          "brands": "Brands",
+          "products": "Products",
+          "categories": "Categories"
+        },
+        "features": {
+          "title": "Shopping Experience",
+          "items": [
+            "Premium athletic wear",
+            "Wellness supplements",
+            "Beauty & skincare products",
+            "Fitness accessories",
+            "Healthy lifestyle items",
+            "Member exclusive discounts"
+          ]
+        }
+      }
+    },
+    "buttons": {
+      "bookExperience": "Book Experience",
+      "learnMore": "Learn More",
+      "viewFullSize": "View Full Size"
+    }
+  },
+  "membership": {
+    "title": "MEMBERSHIP",
+    "titleHighlight": "EXCELLENCE",
+    "subtitle": "Choose your path to luxury wellness. Each membership is crafted to deliver exceptional value and exclusive experiences in Azerbaijan's premier destination.",
+    "foundingMembers": "Founding Members: Up to 33% OFF First 6 Months",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save": "SAVE 33%",
+    "plans": {
+      "essential": {
+        "name": "Essential",
+        "description": "Perfect for fitness enthusiasts",
+        "monthlyPrice": 150,
+        "annualPrice": 1200,
+        "features": ["Full gym access", "Group classes", "Locker room access", "Basic fitness assessment"]
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "Complete wellness experience",
+        "monthlyPrice": 280,
+        "annualPrice": 2240,
+        "mostPopular": true,
+        "features": [
+          "Everything in Essential",
+          "Spa access (4 visits/month)",
+          "Personal training (2 sessions)",
+          "Nutrition consultation",
+          "Women's zone access"
+        ]
+      },
+      "elite": {
+        "name": "Elite",
+        "description": "Ultimate luxury membership",
+        "monthlyPrice": 450,
+        "annualPrice": 3600,
+        "features": [
+          "Everything in Premium",
+          "Unlimited spa access",
+          "Unlimited personal training",
+          "VIP locker room",
+          "Concierge services",
+          "Guest privileges"
+        ]
+      }
+    },
+    "customPlan": {
+      "title": "Or Build Your Custom Plan",
+      "subtitle": "Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.",
+      "basePrice": "Base membership starts from",
+      "totalPrice": "Total monthly price",
+      "features": {
+        "gymAccess": {
+          "name": "Gym Access",
+          "price": 120,
+          "description": "Full access to fitness equipment"
+        },
+        "groupClasses": {
+          "name": "Group Classes",
+          "price": 40,
+          "description": "Unlimited fitness classes"
+        },
+        "spaAccess": {
+          "name": "Spa Access",
+          "price": 80,
+          "description": "Monthly spa treatments"
+        },
+        "personalTraining": {
+          "name": "Personal Training",
+          "price": 100,
+          "description": "1-on-1 training sessions"
+        },
+        "womensZone": {
+          "name": "Women's Zone",
+          "price": 30,
+          "description": "Private women-only area"
+        },
+        "nutritionConsultation": {
+          "name": "Nutrition Consultation",
+          "price": 25,
+          "description": "Professional dietary guidance"
+        }
+      }
+    },
+    "guarantee": "Founding Member Guarantee",
+    "claimFoundingStatus": "Claim Founding Status",
+    "selectPlan": "Select Plan"
   },
   "contact": {
     "title": "GET IN",
@@ -70,20 +317,241 @@
     "privacyNotice": "By submitting this form, you agree to our privacy policy. We respect your privacy and will never share your information with third parties.",
     "thankYou": "Thank you for your message! We will get back to you soon.",
     "copyright": "© 2024 Crown Wellness Club. Luxury wellness redefined in Azerbaijan.",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "support": "Support"
+    "contactDetails": {
+      "address": "28 May Street, Baku, Azerbaijan",
+      "phone": "+994 12 123 45 67",
+      "email": "info@crownwellness.az",
+      "hours": "Mon-Sun: 06:00 - 23:00"
+    }
   },
-  "membership": {
-    "title": "MEMBERSHIP",
-    "titleHighlight": "EXCELLENCE",
-    "subtitle": "Choose your path to luxury wellness. Each membership is crafted to deliver exceptional value and exclusive experiences in Azerbaijan's premier destination.",
-    "foundingMembers": "Founding Members: Up to 33% OFF First 6 Months",
-    "monthly": "Monthly",
-    "annual": "Annual",
-    "buildCustom": "Or Build Your Custom Plan",
-    "customSubtitle": "Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.",
-    "guarantee": "Founding Member Guarantee",
-    "claimFoundingStatus": "Claim Founding Status"
+  "trainers": {
+    "title": "EXPERT",
+    "titleHighlight": "TRAINERS",
+    "subtitle": "Meet our world-class team of certified professionals dedicated to your wellness journey. Each trainer brings international expertise and cultural sensitivity to deliver exceptional results.",
+    "stats": {
+      "expertTrainers": "Expert Trainers",
+      "specializations": "Specializations",
+      "languages": "Languages",
+      "availability": "Availability"
+    },
+    "specialties": {
+      "title": "Training",
+      "titleHighlight": "Specialties",
+      "subtitle": "Our comprehensive range of expertise covers every aspect of your wellness journey",
+      "items": {
+        "strengthTraining": {
+          "name": "Strength Training",
+          "description": "Build functional strength with expert guidance"
+        },
+        "wellnessCoaching": {
+          "name": "Wellness Coaching",
+          "description": "Holistic approach to health and wellbeing"
+        },
+        "performanceTraining": {
+          "name": "Performance Training",
+          "description": "Elite athletic performance optimization"
+        },
+        "injuryPrevention": {
+          "name": "Injury Prevention",
+          "description": "Movement assessment and corrective exercise"
+        },
+        "groupClasses": {
+          "name": "Group Classes",
+          "description": "Dynamic group fitness experiences"
+        },
+        "vipTraining": {
+          "name": "VIP Training",
+          "description": "Exclusive one-on-one premium sessions"
+        }
+      }
+    },
+    "team": {
+      "title": "Meet Our",
+      "titleHighlight": "Team",
+      "subtitle": "Elite professionals from around the world, united by passion for wellness excellence"
+    },
+    "trainerDetails": {
+      "experience": "Experience",
+      "languages": "Languages",
+      "bookSession": "Book Session"
+    },
+    "cta": {
+      "title": "Ready to Start Your",
+      "titleHighlight": "Journey?",
+      "subtitle": "Our expert trainers are ready to create a personalized wellness program tailored to your goals, preferences, and cultural needs.",
+      "scheduleConsultation": "Schedule Consultation",
+      "viewAllServices": "View All Services"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Leading Azerbaijan's Wellness Revolution",
+      "title": "CROWN",
+      "titleHighlight": "WELLNESS",
+      "subtitle": "Setting new standards in luxury fitness and wellness experiences across Azerbaijan"
+    },
+    "story": {
+      "title": "Our",
+      "titleHighlight": "Story",
+      "content": "Crown Wellness Club was born from a vision to bring world-class wellness experiences to Azerbaijan while honoring our rich cultural heritage. We believe that true wellness encompasses not just physical fitness, but mental clarity, cultural respect, and community connection.",
+      "culturalExcellence": "Cultural Excellence",
+      "culturalDescription": "Respecting traditions while embracing innovation"
+    },
+    "stats": {
+      "title": "Excellence in",
+      "titleHighlight": "Numbers",
+      "items": {
+        "members": {
+          "number": 2500,
+          "suffix": "+",
+          "label": "Active Members"
+        },
+        "space": {
+          "number": 15000,
+          "suffix": "m²",
+          "label": "Premium Space"
+        },
+        "services": {
+          "number": 200,
+          "suffix": "+",
+          "label": "Wellness Services"
+        },
+        "satisfaction": {
+          "number": 98,
+          "suffix": "%",
+          "label": "Satisfaction Rate"
+        }
+      }
+    },
+    "features": {
+      "items": {
+        "worldClass": {
+          "title": "World-Class Facilities",
+          "description": "State-of-the-art equipment and luxurious amenities designed for the ultimate wellness experience"
+        },
+        "expertTeam": {
+          "title": "Expert Team",
+          "description": "International certified professionals dedicated to your personal wellness journey and goals"
+        },
+        "culturalSensitivity": {
+          "title": "Cultural Sensitivity",
+          "description": "Respecting local traditions while providing modern wellness solutions for all community members"
+        },
+        "holisticApproach": {
+          "title": "Holistic Approach",
+          "description": "Comprehensive wellness programs addressing physical, mental, and spiritual well-being"
+        }
+      }
+    },
+    "values": {
+      "title": "Our",
+      "titleHighlight": "Values",
+      "items": {
+        "excellence": {
+          "title": "Excellence",
+          "description": "We strive for the highest standards in everything we do, from our facilities to our service delivery"
+        },
+        "respect": {
+          "title": "Respect",
+          "description": "Honoring cultural values and individual preferences while creating an inclusive wellness environment"
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Embracing cutting-edge wellness technologies and methodologies to enhance your experience"
+        },
+        "community": {
+          "title": "Community",
+          "description": "Building strong connections and fostering a supportive wellness community in Azerbaijan"
+        }
+      }
+    },
+    "vision": {
+      "title": "Vision &",
+      "titleHighlight": "Mission",
+      "items": {
+        "1": {
+          "title": "Pioneer Wellness Excellence",
+          "description": "Leading Azerbaijan's wellness revolution with international standards and cultural sensitivity"
+        },
+        "2": {
+          "title": "Empower Personal Transformation",
+          "description": "Providing tools, guidance, and support for individuals to achieve their wellness goals"
+        },
+        "3": {
+          "title": "Build Lasting Community",
+          "description": "Creating connections that extend beyond fitness to foster lifelong wellness relationships"
+        }
+      }
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "VISUAL",
+      "titleHighlight": "GALLERY",
+      "subtitle": "Explore the luxury and elegance of Crown Wellness Club through our comprehensive visual collection",
+      "stats": {
+        "space": "15,000m² space",
+        "zones": "12 luxury zones",
+        "equipment": "300+ equipment",
+        "accessibility": "24/7 accessibility"
+      }
+    },
+    "categories": {
+      "title": "Explore Our",
+      "titleHighlight": "Spaces",
+      "subtitle": "Discover the diverse areas that make Crown Wellness Club a complete wellness destination",
+      "all": {
+        "name": "All Gallery",
+        "description": "Complete visual journey through our premium wellness destination"
+      },
+      "fitness": {
+        "name": "Fitness",
+        "description": "State-of-the-art training equipment and modern workout spaces"
+      },
+      "spa": {
+        "name": "Spa & Wellness",
+        "description": "Luxurious treatment rooms and relaxation areas"
+      },
+      "facilities": {
+        "name": "Facilities",
+        "description": "Premium amenities and architectural excellence"
+      },
+      "events": {
+        "name": "Events & Classes",
+        "description": "Dynamic group activities and special wellness events"
+      }
+    },
+    "featured": {
+      "title": "Featured",
+      "titleHighlight": "Highlights"
+    },
+    "collection": {
+      "title": "Collection"
+    },
+    "loadMore": "Load More Images"
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contact": "Contact Us",
+    "viewAll": "View All",
+    "bookNow": "Book Now",
+    "close": "Close",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "submit": "Submit"
   }
 }

@@ -234,7 +234,7 @@ export default function Header() {
                         className='block text-sm font-light text-white/70 hover:text-white transition-colors duration-300 relative overflow-hidden group'
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <span className='relative z-10'>Privacy Policy</span>
+                        <span className='relative z-10'>{t('navigation.privacyPolicy')}</span>
                         <div className='absolute bottom-0 left-0 h-px bg-white/50 w-0 group-hover:w-full transition-all duration-300 ease-out' />
                       </Link>
                       <Link
@@ -242,7 +242,7 @@ export default function Header() {
                         className='block text-sm font-light text-white/70 hover:text-white transition-colors duration-300 relative overflow-hidden group'
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <span className='relative z-10'>Terms of Service</span>
+                        <span className='relative z-10'>{t('navigation.termsOfService')}</span>
                         <div className='absolute bottom-0 left-0 h-px bg-white/50 w-0 group-hover:w-full transition-all duration-300 ease-out' />
                       </Link>
                       <Link
@@ -250,7 +250,7 @@ export default function Header() {
                         className='block text-sm font-light text-white/70 hover:text-white transition-colors duration-300 relative overflow-hidden group'
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <span className='relative z-10'>Support</span>
+                        <span className='relative z-10'>{t('navigation.support')}</span>
                         <div className='absolute bottom-0 left-0 h-px bg-white/50 w-0 group-hover:w-full transition-all duration-300 ease-out' />
                       </Link>
                     </motion.div>

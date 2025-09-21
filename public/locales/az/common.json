@@ -6,84 +6,552 @@
     "gallery": "Qalereya",
     "premiumExperiences": "Premium Təcrübələr",
     "membership": "Üzvlük",
-    "contact": "Əlaqə"
+    "contact": "Əlaqə",
+    "privacyPolicy": "Məxfilik Siyasəti",
+    "termsOfService": "İstifadə Şərtləri",
+    "support": "Dəstək"
   },
   "language": {
     "selectLanguage": "Dil Seçin",
-    "azerbaijani": "Azərbaycan dili",
+    "azerbaijani": "Azərbaycanca",
     "english": "İngiliscə",
     "russian": "Rusca"
   },
   "hero": {
-    "title": "CROWN",
-    "subtitle": "WELLNESS CLUB",
+    "title": "CROWN WELLNESS",
+    "subtitle": "CLUB",
     "description": "Azərbaycanın İlk İnteraktiv",
     "fitness": "Fitness və Wellness Klubu",
-    "tagline": "Sağlamlıq həyat tərzinə çevrilir, birlikdə icmada.",
-    "joinCommunity": "İcmaya Qoşul",
+    "tagline": "Wellness həyat tərzi olduğu yer, birlikdə ictimaiyyətdə.",
+    "joinCommunity": "İctimaiyyətə Qoşul",
     "bookTour": "Tur Sifariş Et",
-    "scrollMore": "DAHA ÇOX ÜÇÜN AŞAĞI SÜRÜŞDÜR",
+    "scrollMore": "DAHA ÇOX ÜÇÜN SÜRÜŞDÜR",
     "muteVideo": "Videonu səssizləşdir",
-    "unmuteVideo": "Videonu səsli et"
+    "unmuteVideo": "Video səsini aç"
   },
-  "buttons": {
-    "learnMore": "Daha Ətraflı",
-    "getStarted": "Başla",
-    "contact": "Bizimlə Əlaqə",
-    "viewAll": "Hamısına Bax",
-    "bookNow": "İndi Sifariş Et"
+  "impressiveScale": {
+    "title": "TƏSİRLİ",
+    "titleHighlight": "MIQYAS",
+    "subtitle": "Azərbaycanda ilk interaktiv fitness lüks wellness klubu dünya səviyyəli imkanlar və mədəni mükəmməllik ilə misilsiz standartlar təyin edir.",
+    "stats": {
+      "premiumSpace": {
+        "title": "Premium Məkan",
+        "subtitle": "Lüks İmkanlar",
+        "description": "5000 kvadrat metrdən çox premium imkanlar və dünya səviyyəli avadanlıqla lüks wellness mərkəzi.",
+        "value": "5000",
+        "suffix": "+ m²"
+      },
+      "premiumEquipment": {
+        "title": "Premium Avadanlıq",
+        "subtitle": "Beynəlxalq Brendlər",
+        "description": "Ən son texnologiya ilə dünya səviyyəli məşq təcrübəsi təmin edən beynəlxalq brend avadanlıqları.",
+        "value": "300",
+        "suffix": "+"
+      },
+      "expertProfessionals": {
+        "title": "Ekspert Peşəkarlar",
+        "subtitle": "Sertifikatlı Mütəxəssislər",
+        "description": "Sizin uğurunuza həsr olunmuş məşqçilər, terapevtlər və wellness ekspertləri daxil olmaqla sertifikatlı mütəxəssislər.",
+        "value": "50",
+        "suffix": "+"
+      },
+      "luxuryServices": {
+        "title": "Lüks Xidmətlər",
+        "subtitle": "Hərtərəfli Wellness",
+        "description": "Fitness məşqindən spa müalicələrinə qədər bütün lüks təcrübələr üçün nəzərdə tutulmuş hərtərəfli wellness xidmətləri.",
+        "value": "150",
+        "suffix": "+"
+      }
+    },
+    "banner": {
+      "title": "Azərbaycanda ilk interaktiv fitness",
+      "subtitle": "Lüks Wellness Məkanı",
+      "description": "Misilsiz lüks, mədəni həssaslıq və dünya səviyyəli imkanlarla Bakıda premium fitness və wellness-in gələcəyinə öncülük edirik. Həm beynəlxalq mükəmməlliyi, həm də yerli dəyərləri hörmət edən yeni standartlar təyin edirik."
+    }
   },
-  "common": {
-    "loading": "Yüklənir...",
-    "error": "Xəta",
-    "success": "Uğurla",
-    "cancel": "Ləğv et",
-    "confirm": "Təsdiq et",
-    "close": "Bağla",
-    "save": "Saxla",
-    "edit": "Redaktə et",
-    "delete": "Sil",
-    "search": "Axtar",
-    "filter": "Filtr",
-    "sort": "Sırala",
-    "next": "Növbəti",
-    "previous": "Əvvəlki",
-    "submit": "Göndər"
+  "premiumExperiences": {
+    "title": "PREMIUM",
+    "titleHighlight": "TƏCRÜBƏLƏR",
+    "subtitle": "Wellness səyahətinizi yüksəltmək üçün nəzərdə tutulmuş dünya səviyyəli imkanlarımızı və xidmətlərimizi kəşf edin. Hər məkan lüks, mədəni həssaslıq və sizin tam məmnuniyyətiniz nəzərə alınmaqla yaradılmışdır.",
+    "experiences": {
+      "fitnessZone": {
+        "title": "Fitness Zonası",
+        "subtitle": "Premium Məşq",
+        "description": "Məşq səmərəliliyinizi və nəticələrinizi maksimuma çatdırmaq üçün nəzərdə tutulmuş ən müasir fitness avadanlıqları və fərdi məşq proqramları.",
+        "badge": "Ən Populyar",
+        "stats": {
+          "equipment": "Avadanlıq",
+          "trainers": "Məşqçilər",
+          "classes": "Dərslər"
+        },
+        "features": {
+          "title": "Fitness İmkanları",
+          "items": [
+            "Qabaqcıl kardio avadanlıqları",
+            "Peşəkar çəki məşqi sahəsi",
+            "Funksional məşq zonası",
+            "Şəxsi məşq seansları",
+            "Qrup fitness dərsləri",
+            "Performans izləmə sistemi"
+          ]
+        }
+      },
+      "spaZone": {
+        "title": "Spa Zonası",
+        "subtitle": "Lüks Rahatlıq",
+        "description": "Bədəninizi, zehninizi və ruhunuzu canlandırmaq üçün nəzərdə tutulmuş dünya səviyyəli spa müalicələri və terapevtik xidmətlərdən həzz alın.",
+        "badge": "Eksklüziv",
+        "stats": {
+          "treatmentRooms": "Müalicə Otaqları",
+          "therapists": "Terapevtlər",
+          "services": "Xidmətlər"
+        },
+        "features": {
+          "title": "Spa Xidmətləri",
+          "items": [
+            "Tam bədən masajları",
+            "Üz müalicələri",
+            "Aromaterapiya seansları",
+            "İsti daş terapiyası",
+            "Cütlük müalicə otaqları",
+            "Rahatlıq salonları"
+          ]
+        }
+      },
+      "beautyZone": {
+        "title": "Gözəllik Zonası",
+        "subtitle": "Estetik Mükəmməllik",
+        "description": "Ən son texnikalar və premium məhsullarla təbii gözəlliyinizi artırmaq üçün peşəkar gözəllik xidmətləri və estetik müalicələr.",
+        "stats": {
+          "specialists": "Mütəxəssislər",
+          "services": "Xidmətlər",
+          "premiumBrands": "Premium Brendlər"
+        },
+        "features": {
+          "title": "Gözəllik Xidmətləri",
+          "items": [
+            "Saç düzümü və boyama",
+            "Peşəkar makiyaj",
+            "Dırnaq sənəti və manikürlər",
+            "Qaş və kirpik xidmətləri",
+            "Dəri baxımı məsləhətləri",
+            "Yaşlanmaya qarşı müalicələr"
+          ]
+        }
+      },
+      "womensZone": {
+        "title": "Qadınlar Zonası",
+        "subtitle": "Şəxsi Ziyarətgah",
+        "description": "Yalnız qadınlar üçün mədəni həssaslığı nəzərə alan, xüsusi fitness avadanlıqları, spa xidmətləri və rahatlıq məkanları olan şəxsi sahə.",
+        "badge": "Mədəni Hörmət",
+        "stats": {
+          "privateArea": "Şəxsi Sahə",
+          "femaleStaff": "Qadın Personal",
+          "exclusiveHours": "Eksklüziv Saatlar"
+        },
+        "features": {
+          "title": "Eksklüziv İmkanlar",
+          "items": [
+            "Yalnız qadınlar üçün fitness sahəsi",
+            "Şəxsi spa müalicələri",
+            "Yalnız qadınlar üçün üzgüçülük hovuzu",
+            "Xüsusi soyunma otaqları",
+            "Yalnız xanımlar üçün dərslər",
+            "Mədəni namaz məkanı"
+          ]
+        }
+      },
+      "fitbarRestaurant": {
+        "title": "Fitbar Restoran",
+        "subtitle": "Qidalanma Mükəmməlliyi",
+        "description": "Optimal wellness üçün qidaçı tərəfindən hazırlanmış menyular, təzə inqrediyentlər və premium içkilər ilə gurme sağlam yemək təcrübəsi.",
+        "stats": {
+          "menuItems": "Menyu Elementləri",
+          "chefs": "Aşpazlar",
+          "seating": "Oturma Yerləri"
+        },
+        "features": {
+          "title": "Yemək Xüsusiyyətləri",
+          "items": [
+            "Qidaçı tərəfindən hazırlanmış menyular",
+            "Üzvi və yerli mənşəli",
+            "Zülal zəngin yemək seçimləri",
+            "Təzə şirə və smoothie barı",
+            "Pəhriz məhdudiyyəti seçimləri",
+            "Premium qəhvə seçimi"
+          ]
+        }
+      },
+      "retailZone": {
+        "title": "Pərakəndə Zonası",
+        "subtitle": "Həyat Tərzi Alış-verişi",
+        "description": "Tam wellness təcrübəsi üçün premium wellness məhsulları, əlavələr, idman geyimləri və lüks həyat tərzi əşyalarının seçilmiş kolleksiyası.",
+        "stats": {
+          "brands": "Brendlər",
+          "products": "Məhsullar",
+          "categories": "Kateqoriyalar"
+        },
+        "features": {
+          "title": "Alış-veriş Təcrübəsi",
+          "items": [
+            "Premium idman geyimləri",
+            "Wellness əlavələri",
+            "Gözəllik və dəri baxımı məhsulları",
+            "Fitness aksesuarları",
+            "Sağlam həyat tərzi əşyaları",
+            "Üzv eksklüziv endirimlər"
+          ]
+        }
+      }
+    },
+    "buttons": {
+      "bookExperience": "Təcrübə Sifariş Et",
+      "learnMore": "Ətraflı Öyrən",
+      "viewFullSize": "Tam Ölçüdə Bax"
+    }
+  },
+  "membership": {
+    "title": "ÜZVLÜK",
+    "titleHighlight": "MÜKƏMMƏLLİK",
+    "subtitle": "Lüks wellness-ə gedən yolunuzu seçin. Hər üzvlük Azərbaycanın premier məkanında müstəsna dəyər və eksklüziv təcrübələr təqdim etmək üçün hazırlanmışdır.",
+    "foundingMembers": "Təsis Üzvləri: İlk 6 Ay üçün 33%-ə qədər ENDİRİM",
+    "monthly": "Aylıq",
+    "annual": "İllik",
+    "save": "33% QƏNAƏT",
+    "plans": {
+      "essential": {
+        "name": "Əsas",
+        "description": "Fitness həvəskarları üçün mükəmməl",
+        "monthlyPrice": 150,
+        "annualPrice": 1200,
+        "features": ["Tam idman zalına giriş", "Qrup dərsləri", "Şkaf otağına giriş", "Əsas fitness qiymətləndirməsi"]
+      },
+      "premium": {
+        "name": "Premium",
+        "description": "Tam wellness təcrübəsi",
+        "monthlyPrice": 280,
+        "annualPrice": 2240,
+        "mostPopular": true,
+        "features": [
+          "Əsasdakı hər şey",
+          "Spa girişi (ayda 4 ziyarət)",
+          "Şəxsi məşq (2 seans)",
+          "Qidalanma məsləhəti",
+          "Qadınlar zonasına giriş"
+        ]
+      },
+      "elite": {
+        "name": "Elit",
+        "description": "Mütləq lüks üzvlük",
+        "monthlyPrice": 450,
+        "annualPrice": 3600,
+        "features": [
+          "Premium-dakı hər şey",
+          "Limitsiz spa girişi",
+          "Limitsiz şəxsi məşq",
+          "VIP şkaf otağı",
+          "Konsiyerj xidmətləri",
+          "Qonaq imtiyazları"
+        ]
+      }
+    },
+    "customPlan": {
+      "title": "Və ya Öz Xüsusi Planınızı Qurun",
+      "subtitle": "Yalnız ehtiyacınız olan xüsusiyyətləri seçərək fərdiləşdirilmiş üzvlük yaradın. Wellness təcrübəsi üzərində tam nəzarət istəyənlər üçün mükəmməldir.",
+      "basePrice": "Əsas üzvlük başlayır",
+      "totalPrice": "Ümumi aylıq qiymət",
+      "features": {
+        "gymAccess": {
+          "name": "İdman Zalına Giriş",
+          "price": 120,
+          "description": "Fitness avadanlıqlarına tam giriş"
+        },
+        "groupClasses": {
+          "name": "Qrup Dərsləri",
+          "price": 40,
+          "description": "Limitsiz fitness dərsləri"
+        },
+        "spaAccess": {
+          "name": "Spa Girişi",
+          "price": 80,
+          "description": "Aylıq spa müalicələri"
+        },
+        "personalTraining": {
+          "name": "Şəxsi Məşq",
+          "price": 100,
+          "description": "1-ə-1 məşq seansları"
+        },
+        "womensZone": {
+          "name": "Qadınlar Zonası",
+          "price": 30,
+          "description": "Şəxsi yalnız qadınlar sahəsi"
+        },
+        "nutritionConsultation": {
+          "name": "Qidalanma Məsləhəti",
+          "price": 25,
+          "description": "Peşəkar pəhriz rəhbərliyi"
+        }
+      }
+    },
+    "guarantee": "Təsis Üzvü Zəmanəti",
+    "claimFoundingStatus": "Təsis Statusunu İddia Et",
+    "selectPlan": "Plan Seç"
   },
   "contact": {
     "title": "ƏLAQƏ",
-    "titleHighlight": "SAXLAYIN",
-    "subtitle": "Lüks wellness səyahətinizə başlamağa hazırsınız? Bu gün bizimlə əlaqə saxlayın və Crown Wellness Club-un Azərbaycanın aparıcı təyinatı nə etdiyini kəşf edin.",
+    "titleHighlight": "SAXLA",
+    "subtitle": "Lüks wellness səyahətinizə başlamağa hazırsınız? Bu gün bizimlə əlaqə saxlayın və Crown Wellness Club-u Azərbaycanın premier məkanı edən şeyləri kəşf edin.",
     "information": "Əlaqə Məlumatları",
     "visitUs": "Bizi Ziyarət Edin",
     "callUs": "Bizə Zəng Edin",
-    "emailUs": "Bizə Email Göndərin",
+    "emailUs": "Bizə E-poçt Göndərin",
     "operatingHours": "İş Saatları",
     "followJourney": "Wellness Səyahətimizi İzləyin",
     "sendMessage": "Bizə Mesaj Göndərin",
     "fullName": "Tam Ad",
-    "emailAddress": "Email Ünvanı",
+    "emailAddress": "E-poçt Ünvanı",
     "mobilePhone": "Mobil Telefon",
     "interestedIn": "Maraqlandığınız",
     "message": "Mesaj",
     "sendMessageBtn": "Mesaj Göndər",
-    "privacyNotice": "Bu formu göndərməklə, məxfilik siyasətimizlə razılaşırsınız. Məxfiliyinizə hörmət edirik və məlumatınızı heç vaxt üçüncü tərəflərlə paylaşmayacağıq.",
-    "thankYou": "Mesajınız üçün təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.",
+    "privacyNotice": "Bu formu təqdim etməklə, məxfilik siyasətimizlə razılaşırsınız. Biz sizin məxfiliyinizə hörmət edirik və məlumatlarınızı heç vaxt üçüncü tərəflərlə paylaşmırıq.",
+    "thankYou": "Mesajınız üçün təşəkkürlər! Tezliklə sizinlə əlaqə saxlayacağıq.",
     "copyright": "© 2024 Crown Wellness Club. Azərbaycanda lüks wellness yenidən təyin edildi.",
-    "privacyPolicy": "Məxfilik Siyasəti",
-    "termsOfService": "Xidmət Şərtləri",
-    "support": "Dəstək"
+    "contactDetails": {
+      "address": "28 May küçəsi, Bakı, Azərbaycan",
+      "phone": "+994 12 123 45 67",
+      "email": "info@crownwellness.az",
+      "hours": "B.e-B: 06:00 - 23:00"
+    }
   },
-  "membership": {
-    "title": "ÜZVLÜKDə",
-    "titleHighlight": "MÜKəMMəLLIK",
-    "subtitle": "Lüks wellness yolunuzu seçin. Hər üzvlük Azərbaycanın aparıcı təyinatında müstəsna dəyər və eksklüziv təcrübələr təqdim etmək üçün hazırlanmışdır.",
-    "foundingMembers": "Təsisçi Üzvlər: İlk 6 Ay üçün 33% -ə qədər ENDİRİM",
-    "monthly": "Aylıq",
-    "annual": "İllik",
-    "buildCustom": "Və ya Öz Xüsusi Planınızı Qurun",
-    "customSubtitle": "Yalnız ehtiyacınız olan xüsusiyyətləri seçərək fərdiləşdirilmiş üzvlük yaradın. Wellness təcrübəsi üzərində tam nəzarət istəyənlər üçün mükəmməl.",
-    "guarantee": "Təsisçi Üzv Zəmanəti",
-    "claimFoundingStatus": "Təsisçi Statusunu Tələb Et"
+  "trainers": {
+    "title": "EKSPERT",
+    "titleHighlight": "MƏŞQÇILƏR",
+    "subtitle": "Wellness səyahətinizə həsr olunmuş sertifikatlı peşəkarlardan ibarət dünya səviyyəli komandamızla tanış olun. Hər məşqçi müstəsna nəticələr vermək üçün beynəlxalq təcrübə və mədəni həssaslıq gətirir.",
+    "stats": {
+      "expertTrainers": "Ekspert Məşqçilər",
+      "specializations": "İxtisaslaşmalar",
+      "languages": "Dillər",
+      "availability": "Mövcudluq"
+    },
+    "specialties": {
+      "title": "Məşq",
+      "titleHighlight": "İxtisasları",
+      "subtitle": "Bizim hərtərəfli təcrübə çeşidimiz wellness səyahətinizin hər aspektini əhatə edir",
+      "items": {
+        "strengthTraining": {
+          "name": "Güc Məşqi",
+          "description": "Ekspert rəhbərliyi ilə funksional güc qur"
+        },
+        "wellnessCoaching": {
+          "name": "Wellness Koçluğu",
+          "description": "Sağlamlıq və rifahın holistik yanaşması"
+        },
+        "performanceTraining": {
+          "name": "Performans Məşqi",
+          "description": "Elit idman performansının optimallaşdırılması"
+        },
+        "injuryPrevention": {
+          "name": "Zədə Qarşısının Alınması",
+          "description": "Hərəkət qiymətləndirməsi və düzəldici məşq"
+        },
+        "groupClasses": {
+          "name": "Qrup Dərsləri",
+          "description": "Dinamik qrup fitness təcrübələri"
+        },
+        "vipTraining": {
+          "name": "VIP Məşq",
+          "description": "Eksklüziv təkbətək premium seanslar"
+        }
+      }
+    },
+    "team": {
+      "title": "Bizim",
+      "titleHighlight": "Komandamızla",
+      "subtitle": "Wellness mükəmməlliyinə ehtiras ilə birləşmiş dünyanın hər yerindən elit peşəkarlar"
+    },
+    "trainerDetails": {
+      "experience": "Təcrübə",
+      "languages": "Dillər",
+      "bookSession": "Seans Sifariş Et"
+    },
+    "cta": {
+      "title": "Səyahətinizə Başlamağa",
+      "titleHighlight": "Hazırsınız?",
+      "subtitle": "Ekspert məşqçilərimiz məqsədlərinizə, üstünlüklərinizə və mədəni ehtiyaclarınıza uyğun fərdiləşdirilmiş wellness proqramı yaratmağa hazırdır.",
+      "scheduleConsultation": "Məsləhət Planlaşdır",
+      "viewAllServices": "Bütün Xidmətləri Gör"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Azərbaycanın Wellness İnqilabına Rəhbərlik",
+      "title": "CROWN",
+      "titleHighlight": "WELLNESS",
+      "subtitle": "Azərbaycan üzrə lüks fitness və wellness təcrübələrində yeni standartlar təyin etmək"
+    },
+    "story": {
+      "title": "Bizim",
+      "titleHighlight": "Hekayəmiz",
+      "content": "Crown Wellness Club zəngin mədəni irsimizə hörmət edərək dünya səviyyəli wellness təcrübələrini Azərbaycana gətirmək vizyonundan doğmuşdur. Biz inanırıq ki, həqiqi wellness təkcə fiziki fitness deyil, həm də zehni aydınlıq, mədəni hörmət və ictimai əlaqəni əhatə edir.",
+      "culturalExcellence": "Mədəni Mükəmməllik",
+      "culturalDescription": "İnnovasiyanı qəbul edərkən ənənələrə hörmət"
+    },
+    "stats": {
+      "title": "Rəqəmlərdə",
+      "titleHighlight": "Mükəmməllik",
+      "items": {
+        "members": {
+          "number": 2500,
+          "suffix": "+",
+          "label": "Aktiv Üzvlər"
+        },
+        "space": {
+          "number": 15000,
+          "suffix": "m²",
+          "label": "Premium Məkan"
+        },
+        "services": {
+          "number": 200,
+          "suffix": "+",
+          "label": "Wellness Xidmətləri"
+        },
+        "satisfaction": {
+          "number": 98,
+          "suffix": "%",
+          "label": "Məmnuniyyət Dərəcəsi"
+        }
+      }
+    },
+    "features": {
+      "items": {
+        "worldClass": {
+          "title": "Dünya Səviyyəli İmkanlar",
+          "description": "Mütləq wellness təcrübəsi üçün nəzərdə tutulmuş ən müasir avadanlıq və lüks imkanlar"
+        },
+        "expertTeam": {
+          "title": "Ekspert Komanda",
+          "description": "Şəxsi wellness səyahətinizə və məqsədlərinizə həsr olunmuş beynəlxalq sertifikatlı peşəkarlar"
+        },
+        "culturalSensitivity": {
+          "title": "Mədəni Həssaslıq",
+          "description": "Bütün ictimai üzvlər üçün müasir wellness həlləri təqdim edərkən yerli ənənələrə hörmət"
+        },
+        "holisticApproach": {
+          "title": "Holistik Yanaşma",
+          "description": "Fiziki, zehni və mənəvi rifahı əhatə edən hərtərəfli wellness proqramları"
+        }
+      }
+    },
+    "values": {
+      "title": "Bizim",
+      "titleHighlight": "Dəyərlərimiz",
+      "items": {
+        "excellence": {
+          "title": "Mükəmməllik",
+          "description": "İmkanlarımızdan xidmət təqdimimizə qədər etdiyimiz hər şeydə ən yüksək standartlara can atırıq"
+        },
+        "respect": {
+          "title": "Hörmət",
+          "description": "Daxilediciliyi olan wellness mühiti yaradarkən mədəni dəyərlərə və fərdi üstünlüklərə hörmət"
+        },
+        "innovation": {
+          "title": "İnnovasiya",
+          "description": "Təcrübənizi artırmaq üçün ən son wellness texnologiyaları və metodologiyalarını qəbul etmək"
+        },
+        "community": {
+          "title": "İctimaiyyət",
+          "description": "Azərbaycanda güclü əlaqələr qurmaq və dəstəkləyici wellness ictimaiyyətini inkişaf etdirmək"
+        }
+      }
+    },
+    "vision": {
+      "title": "Vizyon və",
+      "titleHighlight": "Missiya",
+      "items": {
+        "1": {
+          "title": "Wellness Mükəmməlliyinə Öncülük",
+          "description": "Beynəlxalq standartlar və mədəni həssaslıqla Azərbaycanın wellness inqilabına rəhbərlik etmək"
+        },
+        "2": {
+          "title": "Şəxsi Transformasiyanı Gücləndir",
+          "description": "Fərdlərin wellness məqsədlərinə çatması üçün alətlər, rəhbərlik və dəstək təqdim etmək"
+        },
+        "3": {
+          "title": "Davamlı İctimaiyyət Qur",
+          "description": "Fitness-dən kənara çıxaraq ömürboyu wellness əlaqələrini inkişaf etdirən bağlantılar yaratmaq"
+        }
+      }
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "VİZUAL",
+      "titleHighlight": "QALEREYa",
+      "subtitle": "Crown Wellness Club-un lüks və zərifliyini hərtərəfli vizual kolleksiyamız vasitəsilə kəşf edin",
+      "stats": {
+        "space": "15.000m² məkan",
+        "zones": "12 lüks zona",
+        "equipment": "300+ avadanlıq",
+        "accessibility": "24/7 əlçatanlıq"
+      }
+    },
+    "categories": {
+      "title": "Bizim",
+      "titleHighlight": "Məkanlarımızı Kəşf Edin",
+      "subtitle": "Crown Wellness Club-u tam wellness məkanı edən müxtəlif sahələri kəşf edin",
+      "all": {
+        "name": "Bütün Qalereya",
+        "description": "Premium wellness məkanımız vasitəsilə tam vizual səyahət"
+      },
+      "fitness": {
+        "name": "Fitness",
+        "description": "Ən müasir məşq avadanlıqları və müasir idman məkanları"
+      },
+      "spa": {
+        "name": "Spa və Wellness",
+        "description": "Lüks müalicə otaqları və rahatlıq sahələri"
+      },
+      "facilities": {
+        "name": "İmkanlar",
+        "description": "Premium imkanlar və memarlıq mükəmməlliyi"
+      },
+      "events": {
+        "name": "Tədbirlər və Dərslər",
+        "description": "Dinamik qrup fəaliyyətləri və xüsusi wellness tədbirləri"
+      }
+    },
+    "featured": {
+      "title": "Seçilmiş",
+      "titleHighlight": "Nəzərçarpanlar"
+    },
+    "collection": {
+      "title": "Kolleksiya"
+    },
+    "loadMore": "Daha Çox Şəkil Yüklə"
+  },
+  "buttons": {
+    "learnMore": "Ətraflı Öyrən",
+    "getStarted": "Başla",
+    "contact": "Bizimlə Əlaqə",
+    "viewAll": "Hamısını Gör",
+    "bookNow": "İndi Sifariş Et",
+    "close": "Bağla",
+    "next": "Növbəti",
+    "previous": "Əvvəlki"
+  },
+  "common": {
+    "loading": "Yüklənir...",
+    "error": "Xəta",
+    "success": "Uğur",
+    "cancel": "Ləğv Et",
+    "confirm": "Təsdiq Et",
+    "save": "Yadda Saxla",
+    "edit": "Redaktə Et",
+    "delete": "Sil",
+    "search": "Axtar",
+    "filter": "Süzgəc",
+    "sort": "Sırala",
+    "submit": "Təqdim Et"
   }
 }

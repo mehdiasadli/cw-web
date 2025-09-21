@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Crown, Clock } from 'lucide-react';
 
 interface Trainer {
@@ -20,6 +21,7 @@ interface Trainer {
 }
 
 export default function TrainersPage() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -134,12 +136,36 @@ export default function TrainersPage() {
   ];
 
   const specialties = [
-    { icon: Dumbbell, name: 'Strength Training', description: 'Build functional strength with expert guidance' },
-    { icon: Heart, name: 'Wellness Coaching', description: 'Holistic approach to health and wellbeing' },
-    { icon: Zap, name: 'Performance Training', description: 'Elite athletic performance optimization' },
-    { icon: Shield, name: 'Injury Prevention', description: 'Movement assessment and corrective exercise' },
-    { icon: Users, name: 'Group Classes', description: 'Dynamic group fitness experiences' },
-    { icon: Crown, name: 'VIP Training', description: 'Exclusive one-on-one premium sessions' },
+    {
+      icon: Dumbbell,
+      name: t('trainers.specialties.items.strengthTraining.name'),
+      description: t('trainers.specialties.items.strengthTraining.description'),
+    },
+    {
+      icon: Heart,
+      name: t('trainers.specialties.items.wellnessCoaching.name'),
+      description: t('trainers.specialties.items.wellnessCoaching.description'),
+    },
+    {
+      icon: Zap,
+      name: t('trainers.specialties.items.performanceTraining.name'),
+      description: t('trainers.specialties.items.performanceTraining.description'),
+    },
+    {
+      icon: Shield,
+      name: t('trainers.specialties.items.injuryPrevention.name'),
+      description: t('trainers.specialties.items.injuryPrevention.description'),
+    },
+    {
+      icon: Users,
+      name: t('trainers.specialties.items.groupClasses.name'),
+      description: t('trainers.specialties.items.groupClasses.description'),
+    },
+    {
+      icon: Crown,
+      name: t('trainers.specialties.items.vipTraining.name'),
+      description: t('trainers.specialties.items.vipTraining.description'),
+    },
   ];
 
   return (
@@ -163,30 +189,29 @@ export default function TrainersPage() {
             </div>
 
             <h1 className='text-5xl md:text-7xl font-bold text-white mb-6'>
-              EXPERT <span className='text-[#AE3537]'>TRAINERS</span>
+              {t('trainers.title')} <span className='text-[#AE3537]'>{t('trainers.titleHighlight')}</span>
             </h1>
             <p className='text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8'>
-              Meet our world-class team of certified professionals dedicated to your wellness journey. Each trainer
-              brings international expertise and cultural sensitivity to deliver exceptional results.
+              {t('trainers.subtitle')}
             </p>
 
             {/* Stats */}
             <div className='grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto'>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-[#AE3537] mb-2'>50+</div>
-                <div className='text-gray-300'>Expert Trainers</div>
+                <div className='text-gray-300'>{t('trainers.stats.expertTrainers')}</div>
               </div>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-[#AE3537] mb-2'>15</div>
-                <div className='text-gray-300'>Specializations</div>
+                <div className='text-gray-300'>{t('trainers.stats.specializations')}</div>
               </div>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-[#AE3537] mb-2'>8</div>
-                <div className='text-gray-300'>Languages</div>
+                <div className='text-gray-300'>{t('trainers.stats.languages')}</div>
               </div>
               <div className='text-center'>
                 <div className='text-3xl font-bold text-[#AE3537] mb-2'>24/7</div>
-                <div className='text-gray-300'>Availability</div>
+                <div className='text-gray-300'>{t('trainers.stats.availability')}</div>
               </div>
             </div>
           </div>
@@ -198,11 +223,10 @@ export default function TrainersPage() {
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-              Training <span className='text-[#AE3537]'>Specialties</span>
+              {t('trainers.specialties.title')}{' '}
+              <span className='text-[#AE3537]'>{t('trainers.specialties.titleHighlight')}</span>
             </h2>
-            <p className='text-xl text-gray-300 max-w-3xl mx-auto'>
-              Our comprehensive range of expertise covers every aspect of your wellness journey
-            </p>
+            <p className='text-xl text-gray-300 max-w-3xl mx-auto'>{t('trainers.specialties.subtitle')}</p>
           </div>
 
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -229,11 +253,9 @@ export default function TrainersPage() {
         <div className='max-w-7xl mx-auto'>
           <div className='text-center mb-16'>
             <h2 className='text-4xl md:text-5xl font-bold text-white mb-6'>
-              Meet Our <span className='text-[#AE3537]'>Team</span>
+              {t('trainers.team.title')} <span className='text-[#AE3537]'>{t('trainers.team.titleHighlight')}</span>
             </h2>
-            <p className='text-xl text-gray-300 max-w-3xl mx-auto'>
-              Elite professionals from around the world, united by passion for wellness excellence
-            </p>
+            <p className='text-xl text-gray-300 max-w-3xl mx-auto'>{t('trainers.team.subtitle')}</p>
           </div>
 
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -270,7 +292,7 @@ export default function TrainersPage() {
                     <div className='mb-4'>
                       <div className='flex items-center text-gray-400 text-sm mb-2'>
                         <Award className='w-4 h-4 mr-2' />
-                        {trainer.experience} Experience
+                        {trainer.experience} {t('trainers.trainerDetails.experience')}
                       </div>
                       <div className='flex items-center text-gray-400 text-sm mb-2'>
                         <Clock className='w-4 h-4 mr-2' />
@@ -301,12 +323,12 @@ export default function TrainersPage() {
 
                     {/* Languages */}
                     <div className='text-gray-400 text-sm mb-4'>
-                      <strong>Languages:</strong> {trainer.languages.join(', ')}
+                      <strong>{t('trainers.trainerDetails.languages')}:</strong> {trainer.languages.join(', ')}
                     </div>
 
                     {/* Book Session Button */}
                     <button className='w-full bg-[#AE3537] text-white py-3 rounded-xl font-semibold hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105'>
-                      Book Session
+                      {t('trainers.trainerDetails.bookSession')}
                     </button>
                   </div>
 
@@ -326,18 +348,15 @@ export default function TrainersPage() {
         <div className='max-w-4xl mx-auto text-center'>
           <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700 rounded-3xl p-12 backdrop-blur-sm'>
             <h2 className='text-4xl font-bold text-white mb-6'>
-              Ready to Start Your <span className='text-[#AE3537]'>Journey?</span>
+              {t('trainers.cta.title')} <span className='text-[#AE3537]'>{t('trainers.cta.titleHighlight')}</span>
             </h2>
-            <p className='text-xl text-gray-300 mb-8 leading-relaxed'>
-              Our expert trainers are ready to create a personalized wellness program tailored to your goals,
-              preferences, and cultural needs.
-            </p>
+            <p className='text-xl text-gray-300 mb-8 leading-relaxed'>{t('trainers.cta.subtitle')}</p>
             <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <button className='bg-[#AE3537] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105'>
-                Schedule Consultation
+                {t('trainers.cta.scheduleConsultation')}
               </button>
               <button className='bg-gray-700 text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-600 transition-all duration-300'>
-                View All Services
+                {t('trainers.cta.viewAllServices')}
               </button>
             </div>
           </div>

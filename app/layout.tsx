@@ -17,6 +17,14 @@ export const metadata: Metadata = {
   },
   description:
     'Azerbaijan’s First Interactive Fitness & Wellness Club Where Wellness Becomes a Way of Life, Together In Community',
+  openGraph: {
+    title: 'Crown Wellness Fitness Club',
+    description:
+      'Azerbaijan’s First Interactive Fitness & Wellness Club Where Wellness Becomes a Way of Life, Together In Community',
+    type: 'website',
+    locale: 'az',
+    siteName: 'Crown Wellness Fitness Club',
+  },
 };
 
 export default function RootLayout({

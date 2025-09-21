@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Check, Crown, Star, Sparkles, Award, Dumbbell, Waves, User, Shield } from 'lucide-react';
+import Logo from './logo';
 
 interface PricingPlan {
   id: number;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string; size?: number }>;
   title: string;
   subtitle: string;
   discount?: string;
@@ -90,7 +91,7 @@ const presetPlans: PricingPlan[] = [
   },
   {
     id: 3,
-    icon: Crown,
+    icon: Logo,
     title: 'Crown Royal',
     subtitle: 'Ultimate Luxury',
     discount: '30% OFF',
@@ -451,7 +452,7 @@ export default function MembershipExcellence() {
                   </div>
 
                   <div className='flex items-center justify-between mb-6'>
-                    <plan.icon className='w-12 h-12' />
+                    <plan.icon size={45} className='w-12 h-12' />
                     {plan.popular && <Star className='w-8 h-8 text-yellow-400 fill-current' />}
                   </div>
 
@@ -661,9 +662,9 @@ export default function MembershipExcellence() {
                 </div>
               </div>
               <p className='text-xl text-white leading-relaxed mb-8 max-w-4xl mx-auto'>
-                As a founding member of Crown Wellness Club, you&apos;re not just joining a fitness facility - you&apos;re
-                becoming part of Azerbaijan&apos;s premier wellness revolution. Enjoy exclusive benefits, priority access,
-                and the prestige of being among the first to experience luxury redefined.
+                As a founding member of Crown Wellness Club, you&apos;re not just joining a fitness facility -
+                you&apos;re becoming part of Azerbaijan&apos;s premier wellness revolution. Enjoy exclusive benefits,
+                priority access, and the prestige of being among the first to experience luxury redefined.
               </p>
               <button className='bg-[#AE3537] text-white px-12 py-4 rounded-full font-bold text-lg hover:bg-[#8B2A2D] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#AE3537]/30'>
                 Claim Founding Status

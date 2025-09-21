@@ -422,7 +422,7 @@ export default function ContactSection() {
             </motion.div>
 
             <p className='text-gray-400 text-sm'>
-              © 2024 Crown Wellness Club. Luxury wellness redefined in Azerbaijan.
+              © {new Date().getFullYear()} Crown Wellness Club. Luxury wellness redefined in Azerbaijan.
             </p>
 
             <div className='flex items-center space-x-6 text-gray-400 text-sm'>

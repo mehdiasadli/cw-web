@@ -32,7 +32,7 @@ const experiences: ExperienceCard[] = [
     subtitle: 'Premium Training',
     description:
       'State-of-the-art fitness equipment and personalized training programs designed to maximize your workout efficiency and results.',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+    image: '/images/premium-experiences/fitness-zone.jpeg',
     badge: 'Most Popular',
     stats: [
       { label: 'Equipment', value: 200, suffix: '+' },
@@ -58,7 +58,7 @@ const experiences: ExperienceCard[] = [
     subtitle: 'Luxury Relaxation',
     description:
       'Indulge in world-class spa treatments and therapeutic services designed to rejuvenate your body, mind, and spirit.',
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+    image: '/images/premium-experiences/spa-zone.jpeg',
     badge: 'Exclusive',
     stats: [
       { label: 'Treatment Rooms', value: 12 },
@@ -84,7 +84,7 @@ const experiences: ExperienceCard[] = [
     subtitle: 'Aesthetic Excellence',
     description:
       'Professional beauty services and aesthetic treatments to enhance your natural beauty with the latest techniques and premium products.',
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80',
+    image: '/images/premium-experiences/beauty-zone.jpeg',
     stats: [
       { label: 'Specialists', value: 6 },
       { label: 'Services', value: 30, suffix: '+' },
@@ -105,11 +105,11 @@ const experiences: ExperienceCard[] = [
   },
   {
     id: 4,
-    title: 'Women&apos;s Zone',
+    title: "Women's Zone",
     subtitle: 'Private Sanctuary',
     description:
       'A culturally sensitive, private area exclusively for women, featuring dedicated fitness equipment, spa services, and relaxation spaces.',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80',
+    image: '/images/premium-experiences/womans-zone.jpeg',
     badge: 'Cultural Respect',
     stats: [
       { label: 'Private Area', value: '1500', suffix: 'm²' },
@@ -135,7 +135,7 @@ const experiences: ExperienceCard[] = [
     subtitle: 'Nutrition Excellence',
     description:
       'Gourmet healthy dining experience featuring nutritionist-designed menus, fresh ingredients, and premium beverages for optimal wellness.',
-    image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80',
+    image: '/images/premium-experiences/fitbar-restaurant.jpeg',
     stats: [
       { label: 'Menu Items', value: 120, suffix: '+' },
       { label: 'Chefs', value: 4 },
@@ -160,7 +160,7 @@ const experiences: ExperienceCard[] = [
     subtitle: 'Premium Retail',
     description:
       'Curated selection of premium wellness products, fitness gear, supplements, and lifestyle items to support your health journey.',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
+    image: '/images/premium-experiences/wellness-shop.jpeg',
     stats: [
       { label: 'Products', value: 500, suffix: '+' },
       { label: 'Brands', value: 25 },

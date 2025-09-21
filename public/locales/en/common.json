@@ -1,0 +1,89 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "trainers": "Trainers",
+    "gallery": "Gallery",
+    "premiumExperiences": "Premium Experiences",
+    "membership": "Membership",
+    "contact": "Contact"
+  },
+  "language": {
+    "selectLanguage": "Select Language",
+    "azerbaijani": "Azerbaijani",
+    "english": "English",
+    "russian": "Russian"
+  },
+  "hero": {
+    "title": "CROWN WELLNESS",
+    "subtitle": "CLUB",
+    "description": "Azerbaijan's First Interactive",
+    "fitness": "Fitness & Wellness Club",
+    "tagline": "Where wellness becomes a way of life, together in community.",
+    "joinCommunity": "Join the Community",
+    "bookTour": "Book a Tour",
+    "scrollMore": "SCROLL FOR MORE",
+    "muteVideo": "Mute video",
+    "unmuteVideo": "Unmute video"
+  },
+  "buttons": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contact": "Contact Us",
+    "viewAll": "View All",
+    "bookNow": "Book Now"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit"
+  },
+  "contact": {
+    "title": "GET IN",
+    "titleHighlight": "TOUCH",
+    "subtitle": "Ready to begin your luxury wellness journey? Contact us today and discover what makes Crown Wellness Club Azerbaijan's premier destination.",
+    "information": "Contact Information",
+    "visitUs": "Visit Us",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "operatingHours": "Operating Hours",
+    "followJourney": "Follow Our Wellness Journey",
+    "sendMessage": "Send Us a Message",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "mobilePhone": "Mobile Phone",
+    "interestedIn": "Interested In",
+    "message": "Message",
+    "sendMessageBtn": "Send Message",
+    "privacyNotice": "By submitting this form, you agree to our privacy policy. We respect your privacy and will never share your information with third parties.",
+    "thankYou": "Thank you for your message! We will get back to you soon.",
+    "copyright": "© 2024 Crown Wellness Club. Luxury wellness redefined in Azerbaijan.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "support": "Support"
+  },
+  "membership": {
+    "title": "MEMBERSHIP",
+    "titleHighlight": "EXCELLENCE",
+    "subtitle": "Choose your path to luxury wellness. Each membership is crafted to deliver exceptional value and exclusive experiences in Azerbaijan's premier destination.",
+    "foundingMembers": "Founding Members: Up to 33% OFF First 6 Months",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "buildCustom": "Or Build Your Custom Plan",
+    "customSubtitle": "Create a personalized membership by selecting only the features you need. Perfect for those who want complete control over their wellness experience.",
+    "guarantee": "Founding Member Guarantee",
+    "claimFoundingStatus": "Claim Founding Status"
+  }
+}

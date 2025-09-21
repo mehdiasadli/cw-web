@@ -1,0 +1,89 @@
+{
+  "navigation": {
+    "home": "Ana Səhifə",
+    "about": "Haqqımızda",
+    "trainers": "Məşqçilər",
+    "gallery": "Qalereya",
+    "premiumExperiences": "Premium Təcrübələr",
+    "membership": "Üzvlük",
+    "contact": "Əlaqə"
+  },
+  "language": {
+    "selectLanguage": "Dil Seçin",
+    "azerbaijani": "Azərbaycan dili",
+    "english": "İngiliscə",
+    "russian": "Rusca"
+  },
+  "hero": {
+    "title": "CROWN",
+    "subtitle": "WELLNESS CLUB",
+    "description": "Azərbaycanın İlk İnteraktiv",
+    "fitness": "Fitness və Wellness Klubu",
+    "tagline": "Sağlamlıq həyat tərzinə çevrilir, birlikdə icmada.",
+    "joinCommunity": "İcmaya Qoşul",
+    "bookTour": "Tur Sifariş Et",
+    "scrollMore": "DAHA ÇOX ÜÇÜN AŞAĞI SÜRÜŞDÜR",
+    "muteVideo": "Videonu səssizləşdir",
+    "unmuteVideo": "Videonu səsli et"
+  },
+  "buttons": {
+    "learnMore": "Daha Ətraflı",
+    "getStarted": "Başla",
+    "contact": "Bizimlə Əlaqə",
+    "viewAll": "Hamısına Bax",
+    "bookNow": "İndi Sifariş Et"
+  },
+  "common": {
+    "loading": "Yüklənir...",
+    "error": "Xəta",
+    "success": "Uğurla",
+    "cancel": "Ləğv et",
+    "confirm": "Təsdiq et",
+    "close": "Bağla",
+    "save": "Saxla",
+    "edit": "Redaktə et",
+    "delete": "Sil",
+    "search": "Axtar",
+    "filter": "Filtr",
+    "sort": "Sırala",
+    "next": "Növbəti",
+    "previous": "Əvvəlki",
+    "submit": "Göndər"
+  },
+  "contact": {
+    "title": "ƏLAQƏ",
+    "titleHighlight": "SAXLAYIN",
+    "subtitle": "Lüks wellness səyahətinizə başlamağa hazırsınız? Bu gün bizimlə əlaqə saxlayın və Crown Wellness Club-un Azərbaycanın aparıcı təyinatı nə etdiyini kəşf edin.",
+    "information": "Əlaqə Məlumatları",
+    "visitUs": "Bizi Ziyarət Edin",
+    "callUs": "Bizə Zəng Edin",
+    "emailUs": "Bizə Email Göndərin",
+    "operatingHours": "İş Saatları",
+    "followJourney": "Wellness Səyahətimizi İzləyin",
+    "sendMessage": "Bizə Mesaj Göndərin",
+    "fullName": "Tam Ad",
+    "emailAddress": "Email Ünvanı",
+    "mobilePhone": "Mobil Telefon",
+    "interestedIn": "Maraqlandığınız",
+    "message": "Mesaj",
+    "sendMessageBtn": "Mesaj Göndər",
+    "privacyNotice": "Bu formu göndərməklə, məxfilik siyasətimizlə razılaşırsınız. Məxfiliyinizə hörmət edirik və məlumatınızı heç vaxt üçüncü tərəflərlə paylaşmayacağıq.",
+    "thankYou": "Mesajınız üçün təşəkkür edirik! Tezliklə sizinlə əlaqə saxlayacağıq.",
+    "copyright": "© 2024 Crown Wellness Club. Azərbaycanda lüks wellness yenidən təyin edildi.",
+    "privacyPolicy": "Məxfilik Siyasəti",
+    "termsOfService": "Xidmət Şərtləri",
+    "support": "Dəstək"
+  },
+  "membership": {
+    "title": "ÜZVLÜKDə",
+    "titleHighlight": "MÜKəMMəLLIK",
+    "subtitle": "Lüks wellness yolunuzu seçin. Hər üzvlük Azərbaycanın aparıcı təyinatında müstəsna dəyər və eksklüziv təcrübələr təqdim etmək üçün hazırlanmışdır.",
+    "foundingMembers": "Təsisçi Üzvlər: İlk 6 Ay üçün 33% -ə qədər ENDİRİM",
+    "monthly": "Aylıq",
+    "annual": "İllik",
+    "buildCustom": "Və ya Öz Xüsusi Planınızı Qurun",
+    "customSubtitle": "Yalnız ehtiyacınız olan xüsusiyyətləri seçərək fərdiləşdirilmiş üzvlük yaradın. Wellness təcrübəsi üzərində tam nəzarət istəyənlər üçün mükəmməl.",
+    "guarantee": "Təsisçi Üzv Zəmanəti",
+    "claimFoundingStatus": "Təsisçi Statusunu Tələb Et"
+  }
+}

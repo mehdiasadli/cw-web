@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Star, Users, Dumbbell, Waves, Sparkles, Shield, Coffee, ShoppingBag } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { X, Star, Users, Dumbbell, Waves, Sparkles, Shield, Coffee, ShoppingBag, ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Banner from './banner';
 
@@ -183,71 +183,179 @@ const experiences: ExperienceCard[] = [
 
 export default function PremiumExperiences() {
   const [selectedCard, setSelectedCard] = useState<ExperienceCard | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
   return (
-    <section id='experiences' className='py-20 px-6 bg-[#202020]'>
-      <div className='max-w-7xl mx-auto'>
+    <section
+      id='experiences'
+      className='py-20 px-6 bg-gradient-to-br from-[#1a1a1a] via-[#202020] to-[#1a1a1a] relative overflow-hidden'
+    >
+      {/* Background Effects */}
+      <div className='absolute inset-0'>
+        <div className='absolute top-0 left-0 w-96 h-96 bg-[#AE3537]/5 rounded-full blur-3xl' />
+        <div className='absolute bottom-0 right-0 w-96 h-96 bg-[#AE3537]/5 rounded-full blur-3xl' />
+        <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-px bg-gradient-to-r from-transparent via-[#AE3537]/20 to-transparent' />
+      </div>
+
+      <div className='max-w-7xl mx-auto relative z-10' ref={sectionRef}>
         {/* Section Header */}
-        <div className='text-center mb-16'>
-          <h2 className='text-5xl md:text-6xl font-bold mb-6 text-white'>
-            PREMIUM <span className='text-[#AE3537]'>EXPERIENCES</span>
+        <motion.div
+          className='text-center mb-20'
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <motion.div
+            className='inline-flex items-center gap-4 mb-6'
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className='w-16 h-0.5 bg-gradient-to-r from-transparent to-[#AE3537]' />
+            <Star className='w-8 h-8 text-[#AE3537] fill-current' />
+            <div className='w-16 h-0.5 bg-gradient-to-l from-transparent to-[#AE3537]' />
+          </motion.div>
+
+          <h2 className='text-5xl md:text-7xl font-black mb-6 text-white leading-tight'>
+            PREMIUM{' '}
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
+              EXPERIENCES
+            </span>
           </h2>
           <p className='text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed'>
             Six distinct zones of luxury, each crafted to deliver world-class experiences while honoring
             Azerbaijan&apos;s cultural values.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Cards Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {experiences.map((experience) => (
+        {/* Enhanced Cards Layout */}
+        <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8'>
+          {experiences.map((experience, index) => (
             <motion.div
               key={experience.id}
+              initial={{ opacity: 0, y: 80, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 80, scale: 0.9 }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: 'easeOut',
+              }}
+              onHoverStart={() => setHoveredCard(experience.id)}
+              onHoverEnd={() => setHoveredCard(null)}
               onClick={() => setSelectedCard(experience)}
-              className='bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer group relative'
-              whileHover={{ y: -8 }}
-              layout={false}
+              className='group cursor-pointer'
             >
-              {/* Badge */}
-              {experience.badge && (
-                <div className='absolute top-4 left-4 z-10 bg-[#AE3537] text-white px-3 py-1 rounded-full text-sm font-semibold'>
-                  {experience.badge}
-                </div>
-              )}
-
-              {/* Image */}
-              <div className='relative h-64 overflow-hidden'>
-                <Image
-                  src={experience.image}
-                  alt={experience.title}
-                  width={800}
-                  height={256}
-                  className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
+              <div className='relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-gray-700/50 hover:border-[#AE3537]/30 transition-all duration-500'>
+                {/* Hover Glow Effect */}
+                <motion.div
+                  className='absolute -inset-0.5 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] rounded-3xl opacity-0 blur-xl transition-opacity duration-500'
+                  animate={{ opacity: hoveredCard === experience.id ? 0.3 : 0 }}
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
-                <div className='absolute bottom-4 left-4 text-white'>{experience.icon}</div>
-              </div>
 
-              {/* Content */}
-              <div className='p-6'>
-                <h3 className='text-2xl font-bold mb-2'>
-                  <span className='text-[#AE3537]'>{experience.title.split(' ')[0]}</span>
-                  {' ' + experience.title.split(' ').slice(1).join(' ')}
-                </h3>
-                <p className='text-[#AE3537] font-semibold mb-3'>{experience.subtitle}</p>
-                <p className='text-gray-300 mb-6 line-clamp-3'>{experience.description}</p>
+                {/* Badge */}
+                {experience.badge && (
+                  <motion.div
+                    className='absolute top-6 left-6 z-20 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg'
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {experience.badge}
+                  </motion.div>
+                )}
 
-                {/* Stats */}
-                <div className='flex justify-between items-center'>
-                  {experience.stats.map((stat, index) => (
-                    <div key={index} className='text-center'>
-                      <div className='text-lg font-bold text-[#AE3537]'>
-                        {stat.value}
-                        {stat.suffix || ''}
-                      </div>
-                      <div className='text-xs text-gray-400'>{stat.label}</div>
+                {/* Image Section */}
+                <div className='relative h-80 overflow-hidden'>
+                  <motion.div
+                    animate={{ scale: hoveredCard === experience.id ? 1.1 : 1 }}
+                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                  >
+                    <Image
+                      src={experience.image}
+                      alt={experience.title}
+                      width={800}
+                      height={320}
+                      className='w-full h-full object-cover'
+                    />
+                  </motion.div>
+
+                  {/* Gradient Overlays */}
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent' />
+                  <motion.div
+                    className='absolute inset-0 bg-gradient-to-t from-[#AE3537]/20 to-transparent opacity-0'
+                    animate={{ opacity: hoveredCard === experience.id ? 1 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
+                  {/* Icon */}
+                  <motion.div
+                    className='absolute bottom-6 left-6 p-3 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20'
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {experience.icon}
+                  </motion.div>
+
+                  {/* Hover Play Button */}
+                  <motion.div
+                    className='absolute inset-0 flex items-center justify-center'
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{
+                      opacity: hoveredCard === experience.id ? 1 : 0,
+                      scale: hoveredCard === experience.id ? 1 : 0.5,
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className='w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30'>
+                      <Play className='w-6 h-6 text-white ml-1' fill='currentColor' />
                     </div>
-                  ))}
+                  </motion.div>
+                </div>
+
+                {/* Content Section */}
+                <div className='p-8'>
+                  <motion.div animate={{ y: hoveredCard === experience.id ? -5 : 0 }} transition={{ duration: 0.3 }}>
+                    <h3 className='text-3xl font-black mb-3 leading-tight'>
+                      <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
+                        {experience.title.split(' ')[0]}
+                      </span>
+                      <span className='text-white'>{' ' + experience.title.split(' ').slice(1).join(' ')}</span>
+                    </h3>
+
+                    <p className='text-[#AE3537] font-semibold text-lg mb-4'>{experience.subtitle}</p>
+                    <p className='text-gray-300 mb-8 leading-relaxed line-clamp-3'>{experience.description}</p>
+
+                    {/* Enhanced Stats */}
+                    <div className='grid grid-cols-3 gap-4 mb-6'>
+                      {experience.stats.map((stat, statIndex) => (
+                        <motion.div
+                          key={statIndex}
+                          className='text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/50'
+                          whileHover={{ scale: 1.05, backgroundColor: 'rgba(174, 53, 55, 0.1)' }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <div className='text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] mb-1'>
+                            {stat.value}
+                            {stat.suffix || ''}
+                          </div>
+                          <div className='text-xs text-gray-400 font-medium'>{stat.label}</div>
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <motion.button
+                      className='w-full bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white py-4 px-6 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300'
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Explore Experience
+                      <motion.div animate={{ x: hoveredCard === experience.id ? 5 : 0 }} transition={{ duration: 0.2 }}>
+                        <ArrowRight className='w-5 h-5' />
+                      </motion.div>
+                    </motion.button>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -255,92 +363,195 @@ export default function PremiumExperiences() {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Enhanced Immersive Modal */}
       <AnimatePresence>
         {selectedCard && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedCard(null)}
-            className='fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50'
+            className='fixed inset-0 z-50 flex items-center justify-center'
           >
+            {/* Backdrop */}
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.2, ease: 'easeOut' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedCard(null)}
+              className='absolute inset-0 bg-black/80 backdrop-blur-md'
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0, y: 50 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.8, opacity: 0, y: 50 }}
+              transition={{ duration: 0.4, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className='bg-gray-800 rounded-2xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto relative'
+              className='relative w-full max-w-6xl mx-4 max-h-[95vh] overflow-hidden'
             >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedCard(null)}
-                className='absolute top-4 right-4 z-20 bg-gray-700/90 hover:bg-gray-700 text-white p-2 rounded-full transition-all duration-200'
-              >
-                <X size={20} />
-              </button>
+              <div className='bg-gradient-to-br from-gray-900/95 to-black/95 backdrop-blur-xl rounded-3xl border border-gray-700/50 overflow-hidden shadow-2xl'>
+                {/* Close Button */}
+                <motion.button
+                  onClick={() => setSelectedCard(null)}
+                  className='absolute top-6 right-6 z-30 w-12 h-12 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-full flex items-center justify-center border border-white/20 transition-all duration-300'
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <X size={24} />
+                </motion.button>
 
-              {/* Badge */}
-              {selectedCard.badge && (
-                <div className='absolute top-4 left-4 z-10 bg-[#AE3537] text-white px-4 py-2 rounded-full font-semibold'>
-                  {selectedCard.badge}
-                </div>
-              )}
+                {/* Badge */}
+                {selectedCard.badge && (
+                  <motion.div
+                    className='absolute top-6 left-6 z-20 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white px-6 py-3 rounded-full font-bold text-lg shadow-lg'
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    {selectedCard.badge}
+                  </motion.div>
+                )}
 
-              {/* Image */}
-              <div className='relative h-80'>
-                <Image
-                  src={selectedCard.image}
-                  alt={selectedCard.title}
-                  width={800}
-                  height={320}
-                  className='w-full h-full object-cover'
-                />
-                <div className='absolute inset-0 bg-gradient-to-t from-black/60 to-transparent' />
-                <div className='absolute bottom-6 left-6 text-white'>{selectedCard.icon}</div>
-              </div>
+                <div className='grid lg:grid-cols-2 gap-0 h-full max-h-[95vh] overflow-y-auto'>
+                  {/* Left Side - Image */}
+                  <motion.div
+                    className='relative h-96 lg:h-full'
+                    initial={{ x: -50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                  >
+                    <Image
+                      src={selectedCard.image}
+                      alt={selectedCard.title}
+                      width={800}
+                      height={600}
+                      className='w-full h-full object-cover'
+                    />
+                    <div className='absolute inset-0 bg-gradient-to-r from-transparent to-black/50 lg:bg-gradient-to-r lg:from-transparent lg:to-black/60' />
 
-              {/* Content */}
-              <div className='p-8'>
-                <h3 className='text-4xl font-bold mb-3'>
-                  <span className='text-[#AE3537]'>{selectedCard.title.split(' ')[0]}</span>
-                  {' ' + selectedCard.title.split(' ').slice(1).join(' ')}
-                </h3>
-                <p className='text-[#AE3537] font-semibold text-xl mb-4'>{selectedCard.subtitle}</p>
-                <p className='text-gray-300 text-lg mb-8 leading-relaxed'>{selectedCard.description}</p>
+                    {/* Floating Icon */}
+                    <motion.div
+                      className='absolute bottom-8 left-8 p-4 bg-white/10 backdrop-blur-md rounded-3xl border border-white/20'
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                    >
+                      {selectedCard.icon}
+                    </motion.div>
+                  </motion.div>
 
-                {/* Stats */}
-                <div className='grid grid-cols-3 gap-6 mb-8'>
-                  {selectedCard.stats.map((stat, index) => (
-                    <div key={index} className='text-center bg-gray-700 p-4 rounded-lg'>
-                      <div className='text-2xl font-bold text-[#AE3537] mb-1'>
-                        {stat.value}
-                        {stat.suffix || ''}
+                  {/* Right Side - Content */}
+                  <motion.div
+                    className='p-8 lg:p-12 flex flex-col justify-center'
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    <motion.h3
+                      className='text-4xl lg:text-5xl font-black mb-4 leading-tight'
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                      <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
+                        {selectedCard.title.split(' ')[0]}
+                      </span>
+                      <span className='text-white'>{' ' + selectedCard.title.split(' ').slice(1).join(' ')}</span>
+                    </motion.h3>
+
+                    <motion.p
+                      className='text-[#AE3537] font-bold text-xl mb-6'
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      {selectedCard.subtitle}
+                    </motion.p>
+
+                    <motion.p
+                      className='text-gray-300 text-lg mb-10 leading-relaxed'
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.5 }}
+                    >
+                      {selectedCard.description}
+                    </motion.p>
+
+                    {/* Enhanced Stats */}
+                    <motion.div
+                      className='grid grid-cols-3 gap-4 mb-10'
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
+                      {selectedCard.stats.map((stat, index) => (
+                        <motion.div
+                          key={index}
+                          className='text-center p-4 bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-700/50'
+                          whileHover={{ scale: 1.05, y: -5 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <div className='text-2xl lg:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] mb-2'>
+                            {stat.value}
+                            {stat.suffix || ''}
+                          </div>
+                          <div className='text-gray-300 font-medium text-sm'>{stat.label}</div>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+
+                    {/* Features */}
+                    <motion.div
+                      className='mb-10'
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.7 }}
+                    >
+                      <h4 className='text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
+                        {selectedCard.features.title}
+                      </h4>
+                      <div className='grid grid-cols-1 gap-3'>
+                        {selectedCard.features.items.map((item, index) => (
+                          <motion.div
+                            key={index}
+                            className='flex items-center gap-4 p-3 bg-gray-800/30 rounded-xl border border-gray-700/30'
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
+                            whileHover={{ x: 5, backgroundColor: 'rgba(174, 53, 55, 0.1)' }}
+                          >
+                            <Star size={18} className='text-[#AE3537] fill-current flex-shrink-0' />
+                            <span className='text-gray-300 font-medium'>{item}</span>
+                          </motion.div>
+                        ))}
                       </div>
-                      <div className='text-gray-300'>{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
+                    </motion.div>
 
-                {/* Features */}
-                <div className='mb-8'>
-                  <h4 className='text-2xl font-bold mb-4 text-[#AE3537]'>{selectedCard.features.title}</h4>
-                  <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
-                    {selectedCard.features.items.map((item, index) => (
-                      <div key={index} className='flex items-center gap-3'>
-                        <Star size={16} className='text-[#AE3537] fill-current' />
-                        <span className='text-gray-300'>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className='text-center'>
-                  <button className='bg-[#AE3537] hover:bg-[#8B2A2D] text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105'>
-                    Book Experience
-                  </button>
+                    {/* CTA Button */}
+                    <motion.div
+                      className='flex gap-4'
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.9 }}
+                    >
+                      <motion.button
+                        className='flex-1 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white py-4 px-8 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300'
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Book Experience
+                      </motion.button>
+                      <motion.button
+                        className='px-6 py-4 bg-white/10 backdrop-blur-md text-white rounded-2xl border border-white/20 font-bold hover:bg-white/20 transition-all duration-300'
+                        whileHover={{ scale: 1.02, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Learn More
+                      </motion.button>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>

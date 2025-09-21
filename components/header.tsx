@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import { ExternalLink, Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Twitter } from 'lucide-react';
 import Logo from './logo';
 import LanguageSwitcher from './language-switcher';
 
@@ -15,7 +15,7 @@ interface NavLink {
   type: 'page' | 'section';
 }
 
-const getNavLinks = (t: any): NavLink[] => [
+const getNavLinks = (t: (key: string) => string): NavLink[] => [
   { name: t('navigation.home'), href: '/', type: 'page' },
   { name: t('navigation.about'), href: '/about', type: 'page' },
   { name: t('navigation.trainers'), href: '/trainers', type: 'page' },
@@ -64,7 +64,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavbarText, setShowNavbarText] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
 
   const navLinks = getNavLinks(t);
@@ -82,11 +81,6 @@ export default function Header() {
       const endTransition = windowHeight * 0.8;
       const showTextThreshold = startTransition + (endTransition - startTransition) * 0.7;
       setShowNavbarText(scrollY > showTextThreshold);
-
-      // Calculate scroll progress for smooth animation (0 to 1)
-      const maxScroll = windowHeight * 0.8;
-      const progress = Math.min(scrollY / maxScroll, 1);
-      setScrollProgress(progress);
     };
 
     window.addEventListener('scroll', handleScroll);

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import Logo from './logo';
 
 interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
@@ -322,8 +323,8 @@ export default function ContactSection() {
         >
           <div className='flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0'>
             <div className='flex items-center space-x-3'>
-              <div className='w-8 h-8 bg-[#AE3537] rounded-full flex items-center justify-center'>
-                <span className='text-white font-bold text-sm'>C</span>
+              <div className='p-2 bg-[#AE3537] rounded-full flex items-center justify-center'>
+                <Logo size={24} />
               </div>
               <span className='text-white font-semibold text-lg'>Crown Wellness Club</span>
             </div>

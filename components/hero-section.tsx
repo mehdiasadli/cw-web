@@ -107,7 +107,7 @@ export default function HeroSection() {
           }}
           className='flex flex-col items-center cursor-pointer'
         >
-          <p className='text-sm tracking-widest mb-4 text-gray-300'>DISCOVER LUXURY BELOW</p>
+          <p className='text-sm tracking-widest mb-4 text-gray-300'>SCROLL FOR MORE</p>
           <div className='flex flex-col items-center gap-2'>
             <ChevronDown size={24} className='animate-bounce text-white/80' />
             <ChevronDown size={24} className='animate-bounce text-white/60' style={{ animationDelay: '0.2s' }} />

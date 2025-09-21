@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
 import Logo from './logo';
+import Link from 'next/link';
 
 interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
@@ -336,15 +337,15 @@ export default function ContactSection() {
             </p>
 
             <div className='flex items-center space-x-6 text-gray-400 text-sm'>
-              <a href='#' className='hover:text-[#AE3537] transition-colors duration-300'>
+              <Link href='/privacy-policy' className='hover:text-[#AE3537] transition-colors duration-300'>
                 Privacy Policy
-              </a>
-              <a href='#' className='hover:text-[#AE3537] transition-colors duration-300'>
+              </Link>
+              <Link href='/terms-of-service' className='hover:text-[#AE3537] transition-colors duration-300'>
                 Terms of Service
-              </a>
-              <a href='#' className='hover:text-[#AE3537] transition-colors duration-300'>
+              </Link>
+              <Link href='/support' className='hover:text-[#AE3537] transition-colors duration-300'>
                 Support
-              </a>
+              </Link>
             </div>
           </div>
         </div>

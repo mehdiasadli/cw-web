@@ -347,8 +347,8 @@ export default function MembershipExcellence() {
         >
           <div className='flex items-center justify-center mb-8'>
             <div className='w-20 h-0.5 bg-gradient-to-r from-transparent to-[#AE3537]'></div>
-            <div className='w-12 h-12 bg-[#AE3537] rounded-full flex items-center justify-center mx-6'>
-              <span className='text-white font-bold text-sm'>C</span>
+            <div className='p-4 bg-[#AE3537] rounded-full flex items-center justify-center mx-6'>
+              <Logo size={45} />
             </div>
             <div className='w-20 h-0.5 bg-gradient-to-l from-transparent to-[#AE3537]'></div>
           </div>

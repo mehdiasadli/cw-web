@@ -119,7 +119,7 @@ export default function OpengraphImage() {
               textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
             }}
           >
-            Azerbaijan's First Interactive
+            Azerbaijan&apos;s First Interactive
           </div>
 
           <div

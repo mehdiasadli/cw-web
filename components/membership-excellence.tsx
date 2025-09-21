@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import NumberFlow from '@number-flow/react';
 import {
@@ -18,7 +18,6 @@ import {
   Gift,
 } from 'lucide-react';
 import Logo from './logo';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 
 interface PricingPlan {
   id: number;

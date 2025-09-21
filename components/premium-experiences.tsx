@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { X, Star, Users, Dumbbell, Waves, Sparkles, Shield, Coffee, ShoppingBag, ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';

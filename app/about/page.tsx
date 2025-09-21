@@ -17,7 +17,6 @@ import {
   Calendar,
   Building,
 } from 'lucide-react';
-import NumberFlow from '@number-flow/react';
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);

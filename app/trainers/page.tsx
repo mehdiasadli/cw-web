@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Crown, Clock } from 'lucide-react';
+import Logo from '@/components/logo';
 
 interface Trainer {
   id: number;
@@ -162,7 +163,7 @@ export default function TrainersPage() {
       description: t('trainers.specialties.items.groupClasses.description'),
     },
     {
-      icon: Crown,
+      icon: Logo,
       name: t('trainers.specialties.items.vipTraining.name'),
       description: t('trainers.specialties.items.vipTraining.description'),
     },
@@ -183,7 +184,9 @@ export default function TrainersPage() {
             <div className='flex items-center justify-center mb-8'>
               <div className='w-20 h-0.5 bg-gradient-to-r from-transparent to-[#AE3537]'></div>
               <div className='w-12 h-12 bg-[#AE3537] rounded-full flex items-center justify-center mx-6'>
-                <span className='text-white font-bold text-sm'>C</span>
+                <span className='text-white p-3 flex items-center justify-center font-bold text-sm'>
+                  <Logo size={32} className='text-white' />
+                </span>
               </div>
               <div className='w-20 h-0.5 bg-gradient-to-l from-transparent to-[#AE3537]'></div>
             </div>
@@ -236,8 +239,8 @@ export default function TrainersPage() {
                 className='group bg-gray-800/50 border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/70 hover:border-[#AE3537]/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm'
               >
                 <div className='flex items-center mb-4'>
-                  <div className='p-3 bg-[#AE3537]/20 rounded-xl group-hover:bg-[#AE3537]/30 transition-colors duration-300 mr-4'>
-                    <specialty.icon className='w-6 h-6 text-[#AE3537]' />
+                  <div className='p-3 bg-[#AE3537]/20 rounded-xl group-hover:bg-[#AE3537]/30 transition-colors duration-300 mr-4 flex items-center justify-center'>
+                    <specialty.icon size={24} color='#ae3537' />
                   </div>
                   <h3 className='text-xl font-semibold text-white'>{specialty.name}</h3>
                 </div>

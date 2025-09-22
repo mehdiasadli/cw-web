@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Crown, Clock } from 'lucide-react';
+import { Award, Star, Users, Heart, Dumbbell, Zap, Shield, Clock } from 'lucide-react';
 import Logo from '@/components/logo';
 
 interface Trainer {

@@ -484,6 +484,56 @@
       }
     }
   },
+  "innovationTechnology": {
+    "title": "İNNOVASİYA VƏ",
+    "titleHighlight": "TEXNOLOGİYA",
+    "subtitle": "Səyahətinizi fərdiləşdirən, performansınızı artıran və hər addımda təhlükəsizliyinizi təmin edən ən son texnologiya ilə wellness-in gələcəyini yaşayın.",
+    "stats": {
+      "uptime": "Sistem İşləmə Vaxtı",
+      "monitoring": "Sağlamlıq Monitorinqi",
+      "responseTime": "Cavab Vaxtı",
+      "sensors": "Ağıllı Sensorlar"
+    },
+    "features": {
+      "smartApp": {
+        "title": "Crown Wellness Tətbiqi",
+        "subtitle": "Cib Məşqçiniz",
+        "description": "Məşq izləmə, qidalanma rəhbərliyi, dərs rezervasiyası və mütləq wellness təcrübəsi üçün real vaxtda irəliləyiş monitorinqi ilə hərtərəfli mobil tətbiq."
+      },
+      "aiPersonalization": {
+        "title": "AI Şəxsi Məşqçi",
+        "subtitle": "Ağıllı Adaptasiya",
+        "description": "Qabaqcıl AI alqoritmləri performansınızı, üstünlüklərinizi və məqsədlərinizi təhlil edərək sizinlə birlikdə inkişaf edən fərdi məşq planları və qidalanma tövsiyələri yaradır."
+      },
+      "biometricTracking": {
+        "title": "Biometrik İnteqrasiya",
+        "subtitle": "Real Vaxt Sağlamlıq Məlumatları",
+        "description": "Ürək dərəcəsi, kalori, forma təhlili və bərpa metrikalarını real vaxtda izləmək üçün geyilə bilən cihazlar və ağıllı avadanlıqlarla qarşılıqlı inteqrasiya."
+      },
+      "virtualTraining": {
+        "title": "Virtual Reallıq Fitness",
+        "subtitle": "İmmersiv Məşqlər",
+        "description": "Sizi müxtəlif mühitlərə aparan və cəlbedici və təsirli məşq seansları təqdim edən ən müasir VR fitness təcrübələri."
+      },
+      "cloudIntegration": {
+        "title": "Bulud Sinxronizasiyası və Analitika",
+        "subtitle": "Məlumat Əsaslı Anlayışlar",
+        "description": "Bütün cihazlarda wellness səyahətinizi optimallaşdırmaq üçün qabaqcıl analitika, irəliləyiş izləmə və anlayışlarla fitness məlumatlarınızın təhlükəsiz bulud saxlanması."
+      },
+      "smartSecurity": {
+        "title": "Ağıllı Giriş Nəzarəti",
+        "subtitle": "Təmassız və Təhlükəsiz",
+        "description": "Biometrik giriş nəzarəti, təmassız qeydiyyat və ağıllı şkaf sistemləri bütün üzvlər üçün maksimum təhlükəsizlik və rahatlıq təmin edir."
+      }
+    },
+    "cta": {
+      "title": "Gələcəyi Yaşamağa",
+      "titleHighlight": "Hazırsınız?",
+      "subtitle": "Crown Wellness Club-da innovasiyanın wellness səyahətinizi necə artırdığını görmək üçün tətbiqimizi yükləyin və ya texnologiya nümayişi sifariş edin.",
+      "downloadApp": "Tətbiqi Yüklə",
+      "bookDemo": "Texnoloji Demo Sifariş Et"
+    }
+  },
   "gallery": {
     "hero": {
       "title": "VİZUAL",

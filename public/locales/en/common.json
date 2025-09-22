@@ -484,6 +484,56 @@
       }
     }
   },
+  "innovationTechnology": {
+    "title": "INNOVATION &",
+    "titleHighlight": "TECHNOLOGY",
+    "subtitle": "Experience the future of wellness with cutting-edge technology that personalizes your journey, enhances your performance, and ensures your safety at every step.",
+    "stats": {
+      "uptime": "System Uptime",
+      "monitoring": "Health Monitoring",
+      "responseTime": "Response Time",
+      "sensors": "Smart Sensors"
+    },
+    "features": {
+      "smartApp": {
+        "title": "Crown Wellness App",
+        "subtitle": "Your Pocket Trainer",
+        "description": "Comprehensive mobile app with workout tracking, nutrition guidance, class booking, and real-time progress monitoring for the ultimate wellness experience."
+      },
+      "aiPersonalization": {
+        "title": "AI Personal Coach",
+        "subtitle": "Intelligent Adaptation",
+        "description": "Advanced AI algorithms analyze your performance, preferences, and goals to create personalized workout plans and nutrition recommendations that evolve with you."
+      },
+      "biometricTracking": {
+        "title": "Biometric Integration",
+        "subtitle": "Real-time Health Data",
+        "description": "Seamless integration with wearable devices and smart equipment to monitor heart rate, calories, form analysis, and recovery metrics in real-time."
+      },
+      "virtualTraining": {
+        "title": "Virtual Reality Fitness",
+        "subtitle": "Immersive Workouts",
+        "description": "State-of-the-art VR fitness experiences that transport you to different environments while providing engaging and effective workout sessions."
+      },
+      "cloudIntegration": {
+        "title": "Cloud Sync & Analytics",
+        "subtitle": "Data-Driven Insights",
+        "description": "Secure cloud storage for your fitness data with advanced analytics, progress tracking, and insights to optimize your wellness journey across all devices."
+      },
+      "smartSecurity": {
+        "title": "Smart Access Control",
+        "subtitle": "Contactless & Secure",
+        "description": "Biometric access control, contactless check-ins, and smart locker systems ensure maximum security and convenience for all members."
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience the",
+      "titleHighlight": "Future?",
+      "subtitle": "Download our app or book a technology demonstration to see how innovation enhances your wellness journey at Crown Wellness Club.",
+      "downloadApp": "Download App",
+      "bookDemo": "Book Tech Demo"
+    }
+  },
   "gallery": {
     "hero": {
       "title": "VISUAL",

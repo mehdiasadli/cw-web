@@ -534,6 +534,92 @@
       "bookDemo": "Texnoloji Demo Sifariş Et"
     }
   },
+  "communityLifestyle": {
+    "title": "İCTİMAİYYƏT VƏ",
+    "titleHighlight": "HƏYAT TƏRZI",
+    "subtitle": "Əlaqələrin qurulduğu, dostluqların formalaşdığı və sağlam həyat tərzinin mədəni hörmət və ortaq məqsədlər atmosferində birlikdə qeyd edildiyi canlı wellness həvəskarları ictimaiyyətinə qoşulun.",
+    "stats": {
+      "activeMembers": "Aktiv Üzvlər",
+      "monthlyEvents": "Aylıq Tədbirlər",
+      "satisfaction": "Məmnuniyyət Səviyyəsi",
+      "community": "İctimai Dəstək"
+    },
+    "features": {
+      "socialEvents": {
+        "title": "Sosial Tədbirlər və Şəbəkələşmə",
+        "subtitle": "Əlaqə Qur və Qeyd Et",
+        "description": "İctimaiyyətimizi rahat, qonaqpərvər atmosferdə bir araya gətirən müntəzəm sosial toplantılar, şəbəkələşmə tədbirləri və qeyd etmə partiyaları."
+      },
+      "challenges": {
+        "title": "Fitness Çağırışları",
+        "subtitle": "Həvəsləndir və Nail Ol",
+        "description": "Sağlam rəqabəti və kollektiv nailiyyəti həvəsləndirən aylıq fitness çağırışları, yarışmalar və komanda əsaslı fəaliyyətlər."
+      },
+      "socialSpaces": {
+        "title": "Sosial Salonlar",
+        "subtitle": "Dincəl və Ünsiyyət Qur",
+        "description": "Üzvlərin dincələ və eyni düşüncəli fərdlərlə əlaqə qura biləcəyi gözəl dizayn edilmiş sosial sahələr, kafe məkanları və istirahət salonları."
+      },
+      "culturalEvents": {
+        "title": "Mədəni Qeyd Etmələr",
+        "subtitle": "Hörmət Et və Saya",
+        "description": "Azərbaycan mədəniyyətini, beynəlxalq bayramları qeyd edən və müxtəlif ictimaiyyətimizi hörmət edən mədəni məlumatlılıq proqramları olan xüsusi tədbirlər."
+      },
+      "wellness": {
+        "title": "Wellness Təlimləri",
+        "subtitle": "Öyrən və Böyü",
+        "description": "Sertifikatlı ekspertlər tərəfindən aparılan qidalanma, psixi sağlamlıq, stress idarəetməsi və holistik wellness yanaşmaları üzrə təhsil təlimləri."
+      },
+      "memberPerks": {
+        "title": "Eksklüziv Üzv İmtiyazları",
+        "subtitle": "Mükafatlar və Faydalar",
+        "description": "Xüsusi endirimlər, tədbirlərə erkən giriş, doğum günü qeyd etmələri, yönləndirmə mükafatları və premium imkanlara eksklüziv giriş."
+      }
+    },
+    "upcomingEvents": {
+      "title": "Gələcək",
+      "titleHighlight": "Tədbirlər",
+      "subtitle": "Həyəcanlı gələcək tədbirlərimizə qoşulun və Crown Wellness ictimaiyyət təcrübəsinin bir hissəsi olun.",
+      "joinEvent": "Tədbir Qoşul"
+    },
+    "events": {
+      "yogaSunrise": {
+        "title": "Gündoğan Yoga Seansı",
+        "date": "Dek 28",
+        "time": "06:30",
+        "type": "Wellness",
+        "description": "Xəzər dənizinə baxan dinc gündoğan yogası ilə gününüzə başlayın. Bütün səviyyələr üçün mükəmməl."
+      },
+      "nutritionWorkshop": {
+        "title": "Sağlam Qidalanma Təlimi",
+        "date": "Dek 30",
+        "time": "14:00",
+        "type": "Təhsil",
+        "description": "Sertifikatlı qidaçımızla balanslaşdırılmış qidalanma və yemək planlaması haqqında öyrənin."
+      },
+      "socialMixer": {
+        "title": "Yeni İl Sosial Qarışığı",
+        "date": "Yan 02",
+        "time": "19:00",
+        "type": "Sosial",
+        "description": "Eksklüziv sosial toplantımızda həmkarlarla yeni ili qarşılayın."
+      },
+      "fitnessChallenge": {
+        "title": "Yanvar Fitness Çağırışı",
+        "date": "Yan 05",
+        "time": "18:00",
+        "type": "Çağırış",
+        "description": "Bir aylıq çağırış proqramımızla fitness məqsədlərinizə başlayın."
+      }
+    },
+    "cta": {
+      "title": "Bizim",
+      "titleHighlight": "İctimaiyyətə Qoşulmağa Hazırsınız?",
+      "subtitle": "Azərbaycanın ən qonaqpərvər wellness ictimaiyyətinin bir hissəsi olun. Bizimlə birlikdə əlaqə qurun, böyüyün və məqsədlərinizə nail olun.",
+      "joinCommunity": "İctimaiyyətə Qoşul",
+      "viewEvents": "Bütün Tədbirləri Gör"
+    }
+  },
   "gallery": {
     "hero": {
       "title": "VİZUAL",

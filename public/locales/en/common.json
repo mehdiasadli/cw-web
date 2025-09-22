@@ -534,6 +534,92 @@
       "bookDemo": "Book Tech Demo"
     }
   },
+  "communityLifestyle": {
+    "title": "COMMUNITY &",
+    "titleHighlight": "LIFESTYLE",
+    "subtitle": "Join a vibrant community of wellness enthusiasts where connections are made, friendships are formed, and healthy lifestyles are celebrated together in an atmosphere of cultural respect and shared goals.",
+    "stats": {
+      "activeMembers": "Active Members",
+      "monthlyEvents": "Monthly Events",
+      "satisfaction": "Satisfaction Rate",
+      "community": "Community Support"
+    },
+    "features": {
+      "socialEvents": {
+        "title": "Social Events & Networking",
+        "subtitle": "Connect & Celebrate",
+        "description": "Regular social gatherings, networking events, and celebration parties that bring our community together in a relaxed, welcoming atmosphere."
+      },
+      "challenges": {
+        "title": "Fitness Challenges",
+        "subtitle": "Motivate & Achieve",
+        "description": "Monthly fitness challenges, competitions, and team-based activities that encourage healthy competition and collective achievement."
+      },
+      "socialSpaces": {
+        "title": "Social Lounges",
+        "subtitle": "Relax & Socialize",
+        "description": "Beautifully designed social areas, café spaces, and relaxation lounges where members can unwind and connect with like-minded individuals."
+      },
+      "culturalEvents": {
+        "title": "Cultural Celebrations",
+        "subtitle": "Honor & Respect",
+        "description": "Special events celebrating Azerbaijani culture, international holidays, and cultural awareness programs that honor our diverse community."
+      },
+      "wellness": {
+        "title": "Wellness Workshops",
+        "subtitle": "Learn & Grow",
+        "description": "Educational workshops on nutrition, mental health, stress management, and holistic wellness approaches led by certified experts."
+      },
+      "memberPerks": {
+        "title": "Exclusive Member Perks",
+        "subtitle": "Rewards & Benefits",
+        "description": "Special discounts, early access to events, birthday celebrations, referral rewards, and exclusive access to premium amenities."
+      }
+    },
+    "upcomingEvents": {
+      "title": "Upcoming",
+      "titleHighlight": "Events",
+      "subtitle": "Join our exciting upcoming events and be part of the Crown Wellness community experience.",
+      "joinEvent": "Join Event"
+    },
+    "events": {
+      "yogaSunrise": {
+        "title": "Sunrise Yoga Session",
+        "date": "Dec 28",
+        "time": "06:30",
+        "type": "Wellness",
+        "description": "Start your day with peaceful sunrise yoga overlooking the Caspian Sea. Perfect for all levels."
+      },
+      "nutritionWorkshop": {
+        "title": "Healthy Nutrition Workshop",
+        "date": "Dec 30",
+        "time": "14:00",
+        "type": "Education",
+        "description": "Learn about balanced nutrition and meal planning with our certified nutritionist."
+      },
+      "socialMixer": {
+        "title": "New Year Social Mixer",
+        "date": "Jan 02",
+        "time": "19:00",
+        "type": "Social",
+        "description": "Welcome the new year with fellow members in our exclusive social gathering."
+      },
+      "fitnessChallenge": {
+        "title": "January Fitness Challenge",
+        "date": "Jan 05",
+        "time": "18:00",
+        "type": "Challenge",
+        "description": "Kick-start your fitness goals with our month-long challenge program."
+      }
+    },
+    "cta": {
+      "title": "Ready to Join Our",
+      "titleHighlight": "Community?",
+      "subtitle": "Become part of Azerbaijan's most welcoming wellness community. Connect, grow, and achieve your goals together with us.",
+      "joinCommunity": "Join Community",
+      "viewEvents": "View All Events"
+    }
+  },
   "gallery": {
     "hero": {
       "title": "VISUAL",

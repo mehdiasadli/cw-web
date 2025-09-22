@@ -17,6 +17,7 @@ import {
   Calendar,
   Building,
 } from 'lucide-react';
+import Logo from '@/components/logo';
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -74,7 +75,7 @@ export default function AboutPage() {
   // Features/Differentiators
   const features = [
     {
-      icon: Crown,
+      icon: Logo,
       title: 'Luxury Redefined',
       description:
         'Experience unparalleled luxury with world-class amenities designed for the discerning wellness enthusiast.',
@@ -146,7 +147,7 @@ export default function AboutPage() {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ duration: 0.3 }}
               >
-                <Crown className='w-10 h-10 text-white' />
+                <Logo size={40} className='text-white' />
               </motion.div>
               <div className='w-20 h-0.5 bg-gradient-to-l from-transparent to-[#AE3537]' />
             </motion.div>
@@ -261,11 +262,11 @@ export default function AboutPage() {
 
                   {/* Floating Elements */}
                   <motion.div
-                    className='absolute top-8 right-8 p-3 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] rounded-full'
+                    className='absolute top-8 right-8 p-2 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] rounded-full flex items-center justify-center'
                     animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <Crown className='w-6 h-6 text-white' />
+                    <Logo size={30} className='text-white' />
                   </motion.div>
 
                   <motion.div
@@ -393,7 +394,7 @@ export default function AboutPage() {
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <feature.icon className='w-8 h-8 text-[#AE3537]' />
+                    <feature.icon size={32} color='#ae3537' />
                   </motion.div>
                   <h4 className='text-xl font-bold text-white mb-4'>{feature.title}</h4>
                   <p className='text-gray-400 leading-relaxed'>{feature.description}</p>

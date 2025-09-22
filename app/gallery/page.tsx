@@ -12,13 +12,13 @@ import {
   Star,
   Dumbbell,
   Waves,
-  Crown,
   Filter,
   Grid,
   Heart,
   Eye,
 } from 'lucide-react';
 import Image from 'next/image';
+import Logo from '@/components/logo';
 
 interface GalleryItem {
   id: number;
@@ -34,7 +34,7 @@ interface GalleryItem {
 interface GalleryCategory {
   id: string;
   name: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: React.ComponentType<{ className?: string; color?: string }>;
   description: string;
   count: number;
 }
@@ -57,7 +57,7 @@ export default function GalleryPage() {
     { id: 'all', name: 'All Gallery', icon: Camera, description: 'Complete visual experience', count: 24 },
     { id: 'fitness', name: 'Fitness Zone', icon: Dumbbell, description: 'State-of-the-art equipment', count: 8 },
     { id: 'spa', name: 'Spa & Wellness', icon: Waves, description: 'Luxury relaxation spaces', count: 6 },
-    { id: 'facilities', name: 'Facilities', icon: Crown, description: 'Premium amenities', count: 5 },
+    { id: 'facilities', name: 'Facilities', icon: Logo, description: 'Premium amenities', count: 5 },
     { id: 'events', name: 'Events & Classes', icon: Users, description: 'Community activities', count: 5 },
   ];
 
@@ -318,7 +318,7 @@ export default function GalleryPage() {
             <div className='grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto'>
               {[
                 { value: '15,000m²', label: 'Premium Space', icon: Grid },
-                { value: '12', label: 'Luxury Zones', icon: Crown },
+                { value: '12', label: 'Luxury Zones', icon: Logo },
                 { value: '300+', label: 'Equipment Pieces', icon: Dumbbell },
                 { value: '24/7', label: 'Accessibility', icon: Eye },
               ].map((stat, index) => (
@@ -336,7 +336,7 @@ export default function GalleryPage() {
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
-                      <stat.icon className='w-6 h-6 text-white' />
+                      <stat.icon size={24} color='#ffffff' />
                     </motion.div>
                     <div className='text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] mb-2'>
                       {stat.value}
@@ -413,6 +413,7 @@ export default function GalleryPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <category.icon
+                    color={selectedCategory === category.id ? '#ffffff' : '#ae3537'}
                     className={`w-6 h-6 ${selectedCategory === category.id ? 'text-white' : 'text-[#AE3537]'}`}
                   />
                 </motion.div>

@@ -264,14 +264,13 @@ const FeatureCard = React.memo(
         tabIndex={0}
         aria-checked={isSelected}
         aria-labelledby={`feature-${feature.id}-title`}
-        className={`relative p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#AE3537] focus:ring-offset-2 focus:ring-offset-gray-900 backdrop-blur-sm overflow-hidden ${
+        className={`relative p-5 rounded-2xl border-2 cursor-pointer transition-all duration-300 focus:outline-none backdrop-blur-sm overflow-hidden ${
           isSelected
             ? 'bg-gradient-to-r from-[#AE3537]/20 to-[#FF6B6D]/20 border-[#AE3537] shadow-xl shadow-[#AE3537]/30'
             : 'bg-gray-800/50 border-gray-700 hover:border-[#AE3537]/50 hover:bg-gray-800/70'
         }`}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
-        whileHover={{ scale: 1.02, y: -2 }}
         whileTap={{ scale: 0.98 }}
         animate={{
           borderColor: isSelected ? '#AE3537' : '#374151',

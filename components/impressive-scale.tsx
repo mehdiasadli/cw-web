@@ -138,7 +138,7 @@ function CountUpAnimation({
           updateCount();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     observer.observe(element);
@@ -156,26 +156,42 @@ function CountUpAnimation({
 export default function ImpressiveScale() {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const scaleData = getScaleData(t);
 
   useEffect(() => {
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    // Show immediately on mobile to prevent issues
+    if (isMobile) {
+      setTimeout(() => setIsVisible(true), 100);
+    }
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [isMobile]);
 
   return (
     <section ref={sectionRef} className='py-20 px-6 bg-[#111111]'>
@@ -194,7 +210,7 @@ export default function ImpressiveScale() {
             <div
               key={index}
               className={`text-center group transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                isVisible || isMobile ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
@@ -102,11 +102,19 @@ const getTechFeatures = (t: (key: string) => string): TechFeature[] => [
 export default function InnovationTechnology() {
   const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-  const isStatsInView = useInView(statsRef, { once: true, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1, margin: '50px' });
+  const isStatsInView = useInView(statsRef, { once: true, amount: 0.1, margin: '50px' });
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const techFeatures = getTechFeatures(t);
 
@@ -134,7 +142,7 @@ export default function InnovationTechnology() {
         <motion.div
           className='text-center mb-16'
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
           <div className='flex items-center justify-center mb-8'>
@@ -186,7 +194,7 @@ export default function InnovationTechnology() {
           ref={statsRef}
           className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-5xl mx-auto'
           initial={{ opacity: 0, y: 30 }}
-          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isStatsInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {stats.map((stat, index) => (
@@ -221,7 +229,7 @@ export default function InnovationTechnology() {
               key={feature.id}
               className='group relative'
               initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={isInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
               onHoverStart={() => setHoveredCard(feature.id)}
               onHoverEnd={() => setHoveredCard(null)}
@@ -289,7 +297,7 @@ export default function InnovationTechnology() {
         <motion.div
           className='text-center mt-16'
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <div className='bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-700/50 rounded-3xl p-12 backdrop-blur-xl shadow-2xl max-w-4xl mx-auto'>

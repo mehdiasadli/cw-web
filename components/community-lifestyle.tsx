@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import {
@@ -166,16 +166,24 @@ export default function CommunityLifestyle() {
   const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [activeEvent, setActiveEvent] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
   const eventsRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-  const isFeaturesInView = useInView(featuresRef, { once: true, amount: 0.2 });
-  const isEventsInView = useInView(eventsRef, { once: true, amount: 0.2 });
-  const isStatsInView = useInView(statsRef, { once: true, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1, margin: '50px' });
+  const isFeaturesInView = useInView(featuresRef, { once: true, amount: 0.1, margin: '50px' });
+  const isEventsInView = useInView(eventsRef, { once: true, amount: 0.1, margin: '50px' });
+  const isStatsInView = useInView(statsRef, { once: true, amount: 0.1, margin: '50px' });
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const communityFeatures = getCommunityFeatures(t);
   const upcomingEvents = getUpcomingEvents(t);
@@ -207,7 +215,7 @@ export default function CommunityLifestyle() {
         <motion.div
           className='text-center mb-16'
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
           <div className='flex items-center justify-center mb-8'>
@@ -259,7 +267,7 @@ export default function CommunityLifestyle() {
           ref={statsRef}
           className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-16 max-w-5xl mx-auto'
           initial={{ opacity: 0, y: 30 }}
-          animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isStatsInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {communityStats.map((stat, index) => (
@@ -292,7 +300,7 @@ export default function CommunityLifestyle() {
           ref={featuresRef}
           className='grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20'
           initial={{ opacity: 0, y: 30 }}
-          animate={isFeaturesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isFeaturesInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {communityFeatures.map((feature, index) => (
@@ -300,7 +308,7 @@ export default function CommunityLifestyle() {
               key={feature.id}
               className='group relative'
               initial={{ opacity: 0, y: 30 }}
-              animate={isFeaturesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={isFeaturesInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               onHoverStart={() => setHoveredCard(feature.id)}
               onHoverEnd={() => setHoveredCard(null)}
@@ -369,7 +377,7 @@ export default function CommunityLifestyle() {
           ref={eventsRef}
           className='mb-16'
           initial={{ opacity: 0, y: 30 }}
-          animate={isEventsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isEventsInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
           <div className='text-center mb-12'>
@@ -401,7 +409,7 @@ export default function CommunityLifestyle() {
                 key={event.id}
                 className='group relative cursor-pointer'
                 initial={{ opacity: 0, y: 30 }}
-                animate={isEventsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={isEventsInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 onHoverStart={() => setActiveEvent(event.id)}
                 onHoverEnd={() => setActiveEvent(null)}
@@ -467,7 +475,7 @@ export default function CommunityLifestyle() {
         <motion.div
           className='text-center'
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 1.4 }}
         >
           <div className='bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-700/50 rounded-3xl p-12 backdrop-blur-xl shadow-2xl max-w-4xl mx-auto'>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Play, Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import Logo from './logo';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -96,7 +97,7 @@ export default function HeroSection() {
           controls={false}
         >
           <source
-            src='https://res.cloudinary.com/doep7sd3t/video/upload/v1757633456/091254_c6vohz.mp4'
+            src='https://res.cloudinary.com/doep7sd3t/video/upload/v1760541508/crownvideoneedcompress_1_stgpxd.mp4'
             type='video/mp4'
           />
         </video>
@@ -116,39 +117,8 @@ export default function HeroSection() {
         {/* Hero Content */}
         <div className='relative z-20 text-center text-white px-6 max-w-4xl mx-auto'>
           {/* Logo and Title */}
-          <div className='mb-8'>
-            <div className='flex justify-center mb-4'>
-              <Logo color='white' size={120} />
-            </div>
-            {(() => {
-              const { scale, translateY, opacity } = getTransitionValues();
-              return (
-                <>
-                  <h1
-                    className='text-6xl md:text-7xl font-black tracking-wider'
-                    style={{
-                      transform: `scale(${scale}) translateY(${translateY}px)`,
-                      opacity: opacity,
-                      transition: 'none', // Remove CSS transitions for smoother scroll-based animation
-                      transformOrigin: 'center center',
-                    }}
-                  >
-                    {t('hero.title')}
-                  </h1>
-                  <h2
-                    className='text-3xl md:text-4xl font-bold tracking-widest mt-2'
-                    style={{
-                      transform: `scale(${scale}) translateY(${translateY}px)`,
-                      opacity: opacity * 0.8, // Subtitle fades faster
-                      transition: 'none',
-                      transformOrigin: 'center center',
-                    }}
-                  >
-                    {t('hero.subtitle')}
-                  </h2>
-                </>
-              );
-            })()}
+          <div className='flex items-center justify-center mb-8 mt-20'>
+            <Image src='/images/crown-logo-wordmark.svg' alt='Crown Wellness' width={350} height={100} />
           </div>
 
           {/* Subtitle */}
@@ -180,19 +150,6 @@ export default function HeroSection() {
             >
               <Logo color='white' size={24} />
               {t('hero.joinCommunity')}
-            </button>
-
-            <button
-              onClick={() => {
-                const element = document.getElementById('membership');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className='cursor-pointer bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl border border-white/20'
-            >
-              <Play size={20} />
-              {t('hero.bookTour')}
             </button>
           </div>
 

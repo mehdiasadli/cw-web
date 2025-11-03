@@ -950,34 +950,39 @@ export default function MembershipExcellence() {
                   { value: '33%', label: 'Off First 6 Months', icon: Gift },
                   { value: '3', label: 'Free Personal Training Sessions', icon: User },
                   { value: 'VIP', label: 'Grand Opening Access', icon: Crown },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className='text-center group'
-                    initial={{ opacity: 0, y: 30, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 3.4 + index * 0.1 }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
+                ].map(
+                  (
+                    item: { value: string | number; label: string; icon: React.ComponentType<{ className?: string }> },
+                    index: number
+                  ) => (
                     <motion.div
-                      className='inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] rounded-full mb-4 shadow-xl group-hover:shadow-2xl group-hover:shadow-[#AE3537]/40 transition-all duration-300'
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
+                      key={index}
+                      className='text-center group'
+                      initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      transition={{ duration: 0.5, delay: 3.4 + index * 0.1 }}
+                      whileHover={{ scale: 1.05, y: -5 }}
                     >
-                      <item.icon className='w-8 h-8 text-white' />
+                      <motion.div
+                        className='inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] rounded-full mb-4 shadow-xl group-hover:shadow-2xl group-hover:shadow-[#AE3537]/40 transition-all duration-300'
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <item.icon className='w-8 h-8 text-white' />
+                      </motion.div>
+                      <motion.div
+                        className='text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] mb-2'
+                        animate={{
+                          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                      >
+                        {typeof item.value === 'number' ? (item.value as number).toLocaleString() : item.value}
+                      </motion.div>
+                      <div className='text-white font-semibold text-lg'>{item.label}</div>
                     </motion.div>
-                    <motion.div
-                      className='text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] mb-2'
-                      animate={{
-                        backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                      }}
-                      transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
-                    >
-                      {typeof item.value === 'number' ? item.value.toLocaleString() : item.value}
-                    </motion.div>
-                    <div className='text-white font-semibold text-lg'>{item.label}</div>
-                  </motion.div>
-                ))}
+                  )
+                )}
               </div>
 
               <motion.p

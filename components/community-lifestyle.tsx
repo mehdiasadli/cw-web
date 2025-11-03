@@ -8,17 +8,13 @@ import {
   Calendar,
   Coffee,
   Music,
-  Camera,
   Trophy,
   Heart,
-  Star,
   MessageCircle,
   Gift,
   Sparkles,
-  MapPin,
   Clock,
   UserPlus,
-  Smile,
   Award,
 } from 'lucide-react';
 
@@ -165,7 +161,6 @@ const getUpcomingEvents = (t: (key: string) => string): Event[] => [
 export default function CommunityLifestyle() {
   const { t } = useTranslation();
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [activeEvent, setActiveEvent] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -411,8 +406,6 @@ export default function CommunityLifestyle() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isEventsInView || isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                onHoverStart={() => setActiveEvent(event.id)}
-                onHoverEnd={() => setActiveEvent(null)}
                 whileHover={{ y: -5 }}
               >
                 <div className='bg-gradient-to-br from-gray-900/90 to-black/90 border border-gray-700/50 rounded-3xl overflow-hidden backdrop-blur-xl shadow-2xl hover:border-[#AE3537]/50 transition-all duration-300'>

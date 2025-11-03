@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, User, AtSign, Phone, Send, UserPlus } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
 interface LeadFormData {
   fullName: string;
@@ -20,7 +19,6 @@ interface LeadFormProps {
 }
 
 export default function LeadForm({ isModal = false, isOpen = true, onClose, title, subtitle }: LeadFormProps) {
-  const { t } = useTranslation();
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: '',
     email: '',

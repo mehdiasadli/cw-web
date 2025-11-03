@@ -6,7 +6,7 @@ import { Crown, Star, Users, Award } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Contact Crown Wellness Club | Premium Fitness & Wellness in Azerbaijan',
   description:
-    "Contact Azerbaijan's premier wellness destination. Get in touch with Crown Wellness Club for membership information, tours, and wellness consultations.",
+    'Contact Azerbaijan&apos;s premier wellness destination. Get in touch with Crown Wellness Club for membership information, tours, and wellness consultations.',
 };
 
 export default function ContactPage() {
@@ -48,7 +48,7 @@ export default function ContactPage() {
             {/* Subtitle */}
             <p className='text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0'>
               Ready to begin your luxury wellness journey? Contact us today and discover what makes Crown Wellness Club
-              Azerbaijan's premier destination.
+              Azerbaijan&apos;s premier destination.
             </p>
 
             {/* Features Grid */}

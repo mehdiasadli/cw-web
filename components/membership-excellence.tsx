@@ -2,20 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import {
-  Check,
-  Crown,
-  Star,
-  Sparkles,
-  Award,
-  Dumbbell,
-  Waves,
-  User,
-  Shield,
-  ArrowRight,
-  Zap,
-  Gift,
-} from 'lucide-react';
+import { Check, Crown, Star, Sparkles, Award, Dumbbell, Waves, User, Shield, ArrowRight, Gift } from 'lucide-react';
 import Logo from './logo';
 
 interface PricingPlan {
@@ -986,19 +973,7 @@ export default function MembershipExcellence() {
                       }}
                       transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
                     >
-                      {typeof item.value === 'number' ? (
-                        <NumberFlow
-                          value={item.value}
-                          format={{ notation: 'standard' }}
-                          className='text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'
-                          transformTiming={{
-                            duration: 1000,
-                            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                          }}
-                        />
-                      ) : (
-                        item.value
-                      )}
+                      {typeof item.value === 'number' ? item.value.toLocaleString() : item.value}
                     </motion.div>
                     <div className='text-white font-semibold text-lg'>{item.label}</div>
                   </motion.div>

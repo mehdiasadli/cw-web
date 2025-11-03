@@ -2,27 +2,18 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Play, Volume2, VolumeX, ChevronDown } from 'lucide-react';
+import { Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import Logo from './logo';
 import Image from 'next/image';
 
-interface HeroSectionProps {
-  initialMuted?: boolean;
-}
-
-export default function HeroSection({ initialMuted = true }: HeroSectionProps) {
+export default function HeroSection() {
   const { t } = useTranslation();
-  const [isMuted, setIsMuted] = useState(initialMuted);
+  const [isMuted, setIsMuted] = useState(true);
   const [scrollY, setScrollY] = useState(0);
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
   };
-
-  // Update muted state when initialMuted prop changes
-  useEffect(() => {
-    setIsMuted(initialMuted);
-  }, [initialMuted]);
 
   useEffect(() => {
     const handleScroll = () => {

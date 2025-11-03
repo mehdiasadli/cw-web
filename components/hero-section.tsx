@@ -141,9 +141,8 @@ export default function HeroSection() {
           <div className='flex flex-col sm:flex-row gap-6 justify-center items-center mb-16'>
             <button
               onClick={() => {
-                const element = document.getElementById('experiences');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
+                if (typeof window !== 'undefined') {
+                  window.location.hash = 'contact';
                 }
               }}
               className='cursor-pointer bg-[#AE3537] hover:bg-[#8B2A2D] text-white px-10 py-5 rounded-full flex items-center gap-3 transition-all duration-300 transform hover:scale-105 font-semibold text-xl'
@@ -156,9 +155,8 @@ export default function HeroSection() {
           {/* Scroll Down Indicator */}
           <div
             onClick={() => {
-              const element = document.getElementById('experiences');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+              if (typeof window !== 'undefined') {
+                window.location.hash = 'experiences';
               }
             }}
             className='flex flex-col items-center cursor-pointer'

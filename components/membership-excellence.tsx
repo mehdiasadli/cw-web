@@ -2,7 +2,6 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import NumberFlow from '@number-flow/react';
 import {
   Check,
   Crown,
@@ -237,12 +236,10 @@ const FeatureCard = React.memo(
     feature,
     isSelected,
     onToggle,
-    isAnnual,
   }: {
     feature: CustomFeature;
     isSelected: boolean;
     onToggle: (id: string) => void;
-    isAnnual: boolean;
   }) => {
     const handleClick = (e: React.MouseEvent) => {
       e.preventDefault();
@@ -321,25 +318,6 @@ const FeatureCard = React.memo(
               >
                 {feature.name}
               </motion.h4>
-              <motion.div
-                className={`font-bold text-xl flex items-baseline gap-1 ${isSelected ? 'text-[#AE3537]' : 'text-gray-400'}`}
-                animate={{
-                  color: isSelected ? '#AE3537' : '#9ca3af',
-                  scale: isSelected ? 1.1 : 1,
-                }}
-                transition={{ duration: 0.2 }}
-              >
-                <span>$</span>
-                <NumberFlow
-                  value={isAnnual ? Math.floor(feature.yearlyPrice / 12) : feature.monthlyPrice}
-                  format={{ notation: 'standard' }}
-                  transformTiming={{
-                    duration: 600,
-                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                  }}
-                />
-                <span className='text-sm'>/mo</span>
-              </motion.div>
             </div>
             <p
               className={`text-sm mb-3 transition-colors duration-200 ${
@@ -365,19 +343,10 @@ const FeatureCard = React.memo(
 FeatureCard.displayName = 'FeatureCard';
 
 export default function MembershipExcellence() {
-  const [isAnnual, setIsAnnual] = useState(true);
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
-
-  // Calculate custom pricing with useMemo for performance
-  const customPrice = React.useMemo(() => {
-    const selectedFeaturesData = customFeatures.filter((feature) => selectedFeatures.includes(feature.id));
-    const monthlyTotal = selectedFeaturesData.reduce((sum, feature) => sum + feature.monthlyPrice, 0);
-    const yearlyTotal = selectedFeaturesData.reduce((sum, feature) => sum + feature.yearlyPrice, 0);
-    return { monthly: monthlyTotal, yearly: yearlyTotal };
-  }, [selectedFeatures]);
 
   // Feature selection handler with useCallback for performance
   const handleFeatureToggle = React.useCallback((featureId: string) => {
@@ -486,48 +455,6 @@ export default function MembershipExcellence() {
           </motion.div>
         </motion.div>
 
-        {/* Billing Toggle */}
-        <div
-          className={`mb-16 transition-all duration-1000 delay-300 ${
-            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className='flex justify-center'>
-            <div className='bg-gray-800/50 border border-gray-700 rounded-2xl p-1 backdrop-blur-sm'>
-              <div className='flex'>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    console.log('Monthly billing selected');
-                    setIsAnnual(false);
-                  }}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 ${
-                    !isAnnual
-                      ? 'bg-[#AE3537] text-white shadow-lg focus:ring-[#AE3537]'
-                      : 'text-white hover:text-[#AE3537] focus:ring-gray-500'
-                  }`}
-                >
-                  Monthly
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    console.log('Annual billing selected');
-                    setIsAnnual(true);
-                  }}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 ${
-                    isAnnual
-                      ? 'bg-[#AE3537] text-white shadow-lg focus:ring-[#AE3537]'
-                      : 'text-white hover:text-[#AE3537] focus:ring-gray-500'
-                  }`}
-                >
-                  Annual
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Preset Plans */}
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20'>
           {presetPlans.map((plan, index) => (
@@ -598,25 +525,6 @@ export default function MembershipExcellence() {
                   transition={{ duration: 0.4 }}
                 >
                   {/* Savings Badge */}
-                  <motion.div
-                    className='absolute top-4 right-4'
-                    initial={{ scale: 0, rotate: 45 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  >
-                    <motion.div
-                      className='bg-white/30 backdrop-blur-md rounded-full px-4 py-2 text-sm font-bold border border-white/20 shadow-lg'
-                      whileHover={{ scale: 1.1, rotate: -5 }}
-                      animate={{
-                        boxShadow:
-                          hoveredPlan === plan.id
-                            ? '0 0 20px rgba(255, 255, 255, 0.5)'
-                            : '0 0 0px rgba(255, 255, 255, 0)',
-                      }}
-                    >
-                      {plan.discount}
-                    </motion.div>
-                  </motion.div>
 
                   <div className='flex items-center justify-between mb-8'>
                     <motion.div
@@ -653,65 +561,6 @@ export default function MembershipExcellence() {
                   >
                     {plan.subtitle}
                   </motion.p>
-
-                  {/* Pricing */}
-                  <motion.div
-                    className='mb-6'
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                  >
-                    <div className='flex items-baseline space-x-4'>
-                      <div className='text-5xl font-black flex items-baseline'>
-                        <span>$</span>
-                        <NumberFlow
-                          value={isAnnual ? Math.floor(plan.price.yearly / 12) : plan.price.monthly}
-                          format={{ notation: 'standard' }}
-                          className='text-5xl font-black'
-                          transformTiming={{
-                            duration: 800,
-                            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                          }}
-                        />
-                      </div>
-                      <div className='flex flex-col'>
-                        <div className='text-white/60 text-sm line-through flex items-baseline'>
-                          <span>$</span>
-                          <NumberFlow
-                            value={isAnnual ? Math.floor(plan.originalPrice.yearly / 12) : plan.originalPrice.monthly}
-                            format={{ notation: 'standard' }}
-                            className='text-sm'
-                            transformTiming={{
-                              duration: 600,
-                              easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                            }}
-                          />
-                        </div>
-                        <span className='text-white/80 text-sm font-medium'>/month</span>
-                      </div>
-                    </div>
-                    {isAnnual && (
-                      <motion.div
-                        className='text-white/70 text-sm mt-2 flex items-center gap-2'
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        <Zap className='w-4 h-4 text-green-400' />
-                        <span>Billed annually ($</span>
-                        <NumberFlow
-                          value={plan.price.yearly}
-                          format={{ notation: 'standard' }}
-                          className='text-sm'
-                          transformTiming={{
-                            duration: 800,
-                            easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                          }}
-                        />
-                        <span>)</span>
-                      </motion.div>
-                    )}
-                  </motion.div>
 
                   <motion.p
                     className='text-white/90 text-base leading-relaxed'
@@ -759,10 +608,11 @@ export default function MembershipExcellence() {
 
                   {/* CTA Button */}
                   <motion.button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log('Plan button clicked:', plan.title);
-                      // Add your plan selection logic here
+                    onClick={() => {
+                      const element = document.getElementById('contact');
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
                     }}
                     className={`group w-full py-5 px-8 rounded-2xl font-bold text-lg text-white transition-all duration-300 overflow-hidden relative ${
                       plan.popular
@@ -782,7 +632,7 @@ export default function MembershipExcellence() {
                     />
 
                     <div className='flex items-center justify-center gap-3 relative z-10'>
-                      <span>{plan.buttonText}</span>
+                      <span>Get Started</span>
                       <motion.div animate={{ x: hoveredPlan === plan.id ? 5 : 0 }} transition={{ duration: 0.2 }}>
                         <ArrowRight className='w-5 h-5' />
                       </motion.div>
@@ -935,64 +785,6 @@ export default function MembershipExcellence() {
                       </motion.p>
                     </motion.div>
 
-                    {/* Price */}
-                    <motion.div
-                      className='mb-8'
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 2.7 }}
-                    >
-                      <div className='text-5xl lg:text-6xl font-black mb-3 flex items-baseline justify-center lg:justify-start gap-2'>
-                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
-                          $
-                        </span>
-                        <div className='text-transparent bg-clip-text bg-gradient-to-r from-[#AE3537] to-[#FF6B6D]'>
-                          {customPrice.monthly > 0
-                            ? isAnnual
-                              ? Math.floor(customPrice.yearly / 12)
-                              : customPrice.monthly
-                            : 0}
-                        </div>
-                        <span className='text-2xl text-gray-400 font-medium'>/month</span>
-                      </div>
-
-                      <AnimatePresence mode='wait'>
-                        {isAnnual && customPrice.yearly > 0 ? (
-                          <motion.div
-                            className='text-base text-gray-400 flex items-center gap-2 justify-center lg:justify-start'
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <Zap className='w-4 h-4 text-green-400' />
-                            <span>Billed annually ($</span>
-                            <NumberFlow
-                              value={customPrice.yearly}
-                              format={{ notation: 'standard' }}
-                              className='text-base'
-                              transformTiming={{
-                                duration: 800,
-                                easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                              }}
-                            />
-                            <span>)</span>
-                          </motion.div>
-                        ) : customPrice.monthly === 0 ? (
-                          <motion.div
-                            className='text-base text-gray-400 flex items-center gap-2 justify-center lg:justify-start'
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -10 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            <ArrowRight className='w-4 h-4 text-[#AE3537]' />
-                            Select features to see pricing
-                          </motion.div>
-                        ) : null}
-                      </AnimatePresence>
-                    </motion.div>
-
                     {/* Description */}
                     <motion.div
                       className='text-gray-400 text-base leading-relaxed mb-8'
@@ -1028,79 +820,37 @@ export default function MembershipExcellence() {
                           </motion.span>
                         )}
                       </AnimatePresence>
-
-                      {/* Debug info for custom pricing */}
-                      {process.env.NODE_ENV === 'development' && (
-                        <div className='text-xs text-gray-500 mt-2'>
-                          Debug: Monthly: {customPrice.monthly}, Yearly: {customPrice.yearly}, Selected: [
-                          {selectedFeatures.join(', ')}]
-                        </div>
-                      )}
                     </motion.div>
 
                     {/* CTA Button */}
                     <motion.button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        console.log('Custom plan button clicked, selected features:', selectedFeatures);
-                        if (selectedFeatures.length > 0) {
-                          // Add your custom plan logic here
-                          alert(`Custom plan created with ${selectedFeatures.length} features!`);
+                      onClick={() => {
+                        const element = document.getElementById('contact');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
                         }
                       }}
-                      className={`group w-full py-5 rounded-2xl font-bold text-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 overflow-hidden relative ${
-                        selectedFeatures.length > 0
-                          ? 'bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white hover:shadow-2xl hover:shadow-[#AE3537]/40 focus:ring-[#AE3537]'
-                          : 'bg-gray-700 text-gray-400 cursor-not-allowed focus:ring-gray-500'
-                      }`}
-                      disabled={selectedFeatures.length === 0}
-                      whileHover={selectedFeatures.length > 0 ? { scale: 1.02, y: -2 } : {}}
-                      whileTap={selectedFeatures.length > 0 ? { scale: 0.98 } : {}}
+                      className='group w-full py-5 rounded-2xl font-bold text-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 overflow-hidden relative bg-gradient-to-r from-[#AE3537] to-[#FF6B6D] text-white hover:shadow-2xl hover:shadow-[#AE3537]/40 focus:ring-[#AE3537]'
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 2.9 }}
                     >
                       {/* Button background effect */}
-                      {selectedFeatures.length > 0 && (
-                        <motion.div
-                          className='absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100'
-                          transition={{ duration: 0.3 }}
-                        />
-                      )}
+                      <motion.div
+                        className='absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100'
+                        transition={{ duration: 0.3 }}
+                      />
 
                       <div className='flex items-center justify-center gap-3 relative z-10'>
-                        <AnimatePresence mode='wait'>
-                          {selectedFeatures.length > 0 ? (
-                            <motion.span
-                              key='build'
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: 10 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              Build Custom Plan
-                            </motion.span>
-                          ) : (
-                            <motion.span
-                              key='select'
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              exit={{ opacity: 0, x: 10 }}
-                              transition={{ duration: 0.2 }}
-                            >
-                              Select Features First
-                            </motion.span>
-                          )}
-                        </AnimatePresence>
-
-                        {selectedFeatures.length > 0 && (
-                          <motion.div
-                            animate={{ x: [0, 5, 0] }}
-                            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-                          >
-                            <ArrowRight className='w-5 h-5' />
-                          </motion.div>
-                        )}
+                        <span>Get Started</span>
+                        <motion.div
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                        >
+                          <ArrowRight className='w-5 h-5' />
+                        </motion.div>
                       </div>
                     </motion.button>
                   </motion.div>
@@ -1153,7 +903,6 @@ export default function MembershipExcellence() {
                             feature={feature}
                             isSelected={isFeatureSelected(feature.id)}
                             onToggle={handleFeatureToggle}
-                            isAnnual={isAnnual}
                           />
                         </motion.div>
                       ))}

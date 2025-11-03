@@ -115,9 +115,32 @@ export default function Header() {
       >
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='grid grid-cols-3 items-center h-16 lg:h-20'>
-            {/* Left: Hamburger Menu */}
-            <div className='flex items-center justify-start'>
+            {/* Left: Hamburger Menu & Contact Info */}
+            <div className='flex items-center justify-start gap-4'>
               <HamburgerMenu isOpen={isMobileMenuOpen} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
+
+              {/* Contact Info - Hidden on mobile and tablet */}
+              <div className='hidden xl:flex items-center gap-6 text-white text-xs'>
+                <a
+                  href='tel:+994123456789'
+                  className='flex items-center gap-1.5 hover:text-[#AE3537] transition-colors duration-300 whitespace-nowrap'
+                >
+                  <svg className='w-3.5 h-3.5 flex-shrink-0' fill='currentColor' viewBox='0 0 20 20'>
+                    <path d='M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' />
+                  </svg>
+                  <span>+994 12 345 67 89</span>
+                </a>
+                <a
+                  href='mailto:info@crownwellness.az'
+                  className='flex items-center gap-1.5 hover:text-[#AE3537] transition-colors duration-300 whitespace-nowrap'
+                >
+                  <svg className='w-3.5 h-3.5 flex-shrink-0' fill='currentColor' viewBox='0 0 20 20'>
+                    <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                    <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                  </svg>
+                  <span>info@crownwellness.az</span>
+                </a>
+              </div>
             </div>
 
             {/* Center: Logo */}
@@ -222,12 +245,40 @@ export default function Header() {
                       transition={{ duration: 0.3, delay: 0.5 }}
                     />
 
+                    {/* Contact Info for Mobile */}
+                    <motion.div
+                      className='space-y-4 lg:hidden'
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 0.6 }}
+                    >
+                      <a
+                        href='tel:+994123456789'
+                        className='flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300'
+                      >
+                        <svg className='w-4 h-4' fill='currentColor' viewBox='0 0 20 20'>
+                          <path d='M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z' />
+                        </svg>
+                        +994 12 345 67 89
+                      </a>
+                      <a
+                        href='mailto:info@crownwellness.az'
+                        className='flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300'
+                      >
+                        <svg className='w-4 h-4' fill='currentColor' viewBox='0 0 20 20'>
+                          <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
+                          <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
+                        </svg>
+                        info@crownwellness.az
+                      </a>
+                    </motion.div>
+
                     {/* Footer Links */}
                     <motion.div
                       className='space-y-4'
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.6 }}
+                      transition={{ duration: 0.3, delay: 0.7 }}
                     >
                       <Link
                         href='/privacy-policy'

@@ -68,8 +68,6 @@ interface FormData {
   fullName: string;
   email: string;
   phone: string;
-  message: string;
-  interestedIn: string;
 }
 
 export default function ContactSection() {
@@ -77,13 +75,11 @@ export default function ContactSection() {
     fullName: '',
     email: '',
     phone: '',
-    message: '',
-    interestedIn: '',
   });
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -102,8 +98,6 @@ export default function ContactSection() {
       fullName: '',
       email: '',
       phone: '',
-      message: '',
-      interestedIn: '',
     });
   };
 
@@ -308,68 +302,24 @@ export default function ContactSection() {
                   </motion.div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5, delay: 1.1 }}
-                  >
-                    <label htmlFor='phone' className='flex items-center gap-2 text-white text-sm font-semibold mb-3'>
-                      <Phone className='w-4 h-4 text-[#AE3537]' />
-                      Mobile Phone
-                    </label>
-                    <input
-                      type='tel'
-                      id='phone'
-                      name='phone'
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className='w-full px-4 py-4 bg-gray-800/50 border border-gray-600/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#AE3537] focus:ring-2 focus:ring-[#AE3537]/20 transition-all duration-300 backdrop-blur-sm hover:bg-gray-800/70'
-                      placeholder='Enter your phone number'
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5, delay: 1.2 }}
-                  >
-                    <label htmlFor='interestedIn' className='block text-white text-sm font-semibold mb-3'>
-                      Interested In
-                    </label>
-                    <select
-                      id='interestedIn'
-                      name='interestedIn'
-                      value={formData.interestedIn}
-                      onChange={handleInputChange}
-                      className='w-full px-4 py-4 bg-gray-800/50 border border-gray-600/50 rounded-2xl text-white focus:outline-none focus:border-[#AE3537] focus:ring-2 focus:ring-[#AE3537]/20 transition-all duration-300 backdrop-blur-sm hover:bg-gray-800/70'
-                    >
-                      <option value=''>Select membership type</option>
-                      <option value='essential'>Essential Plan</option>
-                      <option value='premium'>Premium Plan</option>
-                      <option value='royal'>Crown Royal Plan</option>
-                      <option value='tour'>Just a Tour</option>
-                      <option value='womens-exclusive'>Women&apos;s Exclusive</option>
-                    </select>
-                  </motion.div>
-                </div>
-
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.5, delay: 1.3 }}
+                  transition={{ duration: 0.5, delay: 1.1 }}
                 >
-                  <label htmlFor='message' className='block text-white text-sm font-semibold mb-3'>
-                    Message
+                  <label htmlFor='phone' className='flex items-center gap-2 text-white text-sm font-semibold mb-3'>
+                    <Phone className='w-4 h-4 text-[#AE3537]' />
+                    Mobile Phone <span className='text-[#AE3537]'>*</span>
                   </label>
-                  <textarea
-                    id='message'
-                    name='message'
-                    rows={5}
-                    value={formData.message}
+                  <input
+                    type='tel'
+                    id='phone'
+                    name='phone'
+                    value={formData.phone}
                     onChange={handleInputChange}
-                    className='w-full px-4 py-4 bg-gray-800/50 border border-gray-600/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#AE3537] focus:ring-2 focus:ring-[#AE3537]/20 transition-all duration-300 resize-none backdrop-blur-sm hover:bg-gray-800/70'
-                    placeholder='Tell us about your wellness goals and how we can help you achieve them...'
+                    required
+                    className='w-full px-4 py-4 bg-gray-800/50 border border-gray-600/50 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-[#AE3537] focus:ring-2 focus:ring-[#AE3537]/20 transition-all duration-300 backdrop-blur-sm hover:bg-gray-800/70'
+                    placeholder='Enter your phone number'
                   />
                 </motion.div>
 
@@ -384,7 +334,7 @@ export default function ContactSection() {
                 >
                   <div className='flex items-center justify-center gap-3 relative z-10'>
                     <Send className='w-5 h-5' />
-                    <span className='text-lg'>Send Message</span>
+                    <span className='text-lg'>Get In Touch</span>
                   </div>
                   <motion.div
                     className='absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'
@@ -398,8 +348,8 @@ export default function ContactSection() {
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.5, delay: 1.5 }}
                 >
-                  By submitting this form, you agree to our privacy policy. We respect your privacy and will never share
-                  your information with third parties.
+                  By submitting this form, you agree to be contacted by our team. We respect your privacy and will never
+                  share your information with third parties.
                 </motion.p>
               </form>
             </div>
